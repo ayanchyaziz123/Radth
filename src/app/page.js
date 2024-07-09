@@ -102,7 +102,7 @@ const ContactSection = () => {
       <div className="container mx-auto text-center px-4">
         <h2 className="text-4xl font-bold mb-8 text-blue-900 transition duration-300">Contact Us</h2>
         <p className="text-gray-700 text-lg mb-4 transition duration-300">For more information or inquiries, please contact us at:</p>
-        <p className="text-gray-900 font-semibold text-lg transition duration-300">Email: aaziz9642@gmail.com.com</p>
+        <p className="text-gray-900 font-semibold text-lg transition duration-300">Email: aaziz9642@gmail.com</p>
         <p className="text-gray-900 font-semibold text-lg transition duration-300">Whats app: +13476696071</p>
         <div className="mt-8 max-w-md mx-auto">
           <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
