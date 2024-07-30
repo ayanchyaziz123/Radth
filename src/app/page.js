@@ -51,9 +51,9 @@ const HeroSection = () => {
       <div className="container mx-auto text-center text-white">
         <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Empowering Restaurants with Cutting-Edge Software</h1>
         <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Innovative solutions tailored for the restaurant industry. From management systems to stunning websites, we transform your digital presence.</p>
-        <a href="#services" className="inline-block bg-white text-blue-600 px-8 py-3 rounded-full shadow-lg font-bold text-lg transition transform hover:scale-105 hover:shadow-xl">Explore Services</a>
+        <a href="#services" className="inline-block bg-white text-blue-600 px-8 py-3 rounded-full shadow-lg font-bold text-lg transition transform hover:scale-105 hover:shadow-xl mb-2">Explore Services</a>
       </div>
-      <img src="https://source.unsplash.com/1920x1080/?restaurant,food" alt="Hero Image" className="absolute top-0 left-0 w-full h-full object-cover opacity-30" />
+      {/* <img src="images/softdev.jpeg" alt="Hero Image" className="absolute top-0 left-0 w-full h-full object-cover opacity-30" /> */}
     </div>
   );
 };
@@ -64,7 +64,7 @@ const AboutSection = () => {
       <div className="container mx-auto text-center px-4">
         <h2 className="text-4xl font-extrabold mb-8 text-blue-900">About innovatepi</h2>
         <p className="text-gray-700 text-lg leading-relaxed max-w-2xl mx-auto">
-          At TechGourmet, we specialize in delivering state-of-the-art software solutions and freelancing services specifically for the restaurant industry. Our mission is to enhance your operational efficiency and customer engagement through innovative technology.
+          innovatepi, we specialize in delivering state-of-the-art software solutions and freelancing services specifically for the restaurant industry. Our mission is to enhance your operational efficiency and customer engagement through innovative technology.
         </p>
       </div>
     </section>
@@ -88,24 +88,27 @@ const ServicesSection = () => {
     {
       title: 'Custom Software Development',
       description: 'Tailored software solutions to optimize your restaurant’s operations and elevate customer engagement.',
-      image: 'https://source.unsplash.com/600x400/?software,development',
-    },
-    {
-      title: 'Website & Mobile App Development',
-      description: 'Designing responsive websites and mobile applications to connect you with customers anytime, anywhere.',
-      image: 'https://source.unsplash.com/600x400/?web,design',
+      image: 'images/softdev.jpeg',
     },
     {
       title: 'Restaurant Management Systems',
       description: 'Comprehensive systems for managing reservations, orders, and inventory, providing a seamless experience.',
-      image: 'https://source.unsplash.com/600x400/?restaurant,technology',
+      image: 'images/rest.jpeg',
+    },
+    {
+      title: 'WordPress Website Development',
+      description: 'Creating customized WordPress websites to meet your business needs, with a focus on performance and aesthetics.',
+      image: 'images/word.jpeg',
     },
     {
       title: 'Freelancing Support',
       description: 'Connecting you with skilled freelancers for photography, content creation, marketing, and more.',
-      image: 'https://source.unsplash.com/600x400/?freelancer,work',
+      image: 'images/fre.jpeg',
     },
   ];
+
+
+
 
   return (
     <section id="services" className="bg-gray-100 py-16">
@@ -126,17 +129,17 @@ const PortfolioSection = () => {
     {
       title: 'Gourmet Dine',
       description: 'A bespoke reservation and order management system for a premium dining restaurant.',
-      image: 'https://source.unsplash.com/600x400/?dining,restaurant',
+      image: 'images/dine.jpeg',
     },
     {
       title: 'QuickBites App',
       description: 'A mobile app for a fast-food chain, facilitating online ordering and loyalty programs.',
-      image: 'https://source.unsplash.com/600x400/?fastfood,app',
+      image: 'images/quickbits.jpeg',
     },
     {
       title: 'The Culinary Blog',
       description: 'A rich blog platform for sharing recipes, cooking tips, and restaurant reviews.',
-      image: 'https://source.unsplash.com/600x400/?cooking,blog',
+      image: 'images/blog.jpeg',
     },
   ];
 
