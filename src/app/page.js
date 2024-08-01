@@ -53,10 +53,10 @@ const Navbar = () => {
   return (
     <nav className="bg-white text-gray-900 p-4 shadow-lg fixed top-0 w-full z-20 transition duration-500 ease-in-out transform">
       <div className="container mx-auto flex justify-between items-center">
-        <a href="/" className="flex items-center text-3xl font-extrabold tracking-tight text-blue-900">
+      <a href="/" className="flex items-center text-3xl font-extrabold tracking-tight text-blue-900">
+      <img src="images/logo.png" alt="Logo" className="h-10 w-40 mr-2" />
 
-          innovatepi
-        </a>
+    </a>
         <div className="hidden md:flex space-x-8 text-lg">
           <a
             href="#about"
