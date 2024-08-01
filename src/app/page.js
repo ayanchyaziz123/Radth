@@ -118,7 +118,7 @@ const Navbar = () => {
 // HeroSection component
 const HeroSection = () => {
   return (
-    <div className="relative min-h-screen bg-gradient-to-r  flex items-center">
+    <div className="relative min-h-screen bg-gradient-to-r from-dark-800 to-dark-400 flex items-center">
       
       <div className="relative w-full lg:w-1/2 h-96 lg:h-full">
         <img
