@@ -51,67 +51,54 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-white text-gray-900 p-4 shadow-lg fixed top-0 w-full z-20 transition duration-500 ease-in-out transform">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="bg-white text-gray-900 p-4 shadow-lg fixed top-0 w-full z-20 transition-all duration-300 ease-in-out transform">
+    <div className="container mx-auto flex justify-between items-center">
       <a href="/" className="flex items-center text-3xl font-extrabold tracking-tight text-blue-900">
-      <img src="images/logo.png" alt="Logo" className="h-10 w-40 mr-2" />
-
-    </a>
-        <div className="hidden md:flex space-x-8 text-lg">
-          <a
-            href="#about"
-            className={`${activeSection === 'about' ? 'text-blue-600' : 'hover:text-blue-600'} transition duration-300 ease-in-out`}
-          >
-            About
-          </a>
-          <a
-            href="#services"
-            className={`${activeSection === 'services' ? 'text-blue-600' : 'hover:text-blue-600'} transition duration-300 ease-in-out`}
-          >
-            Services
-          </a>
-          <a
-            href="#portfolio"
-            className={`${activeSection === 'portfolio' ? 'text-blue-600' : 'hover:text-blue-600'} transition duration-300 ease-in-out`}
-          >
-            Portfolio
-          </a>
-          <a
-            href="#contact"
-            className={`${activeSection === 'contact' ? 'text-blue-600' : 'hover:text-blue-600'} transition duration-300 ease-in-out`}
-          >
-            Contact
-          </a>
-        </div>
-        <button className="md:hidden text-3xl focus:outline-none" onClick={toggleMenu}>
-          {isOpen ? '✖' : '☰'}
-        </button>
+        <img src="images/logo.png" alt="Logo" className="h-10 w-40 mr-2" />
+      </a>
+      <div className="hidden md:flex space-x-8 text-lg">
+        <a href="#about" className={`${activeSection === 'about' ? 'text-blue-600 border-b-2 border-blue-600' : 'hover:text-blue-600'} transition-all duration-300 ease-in-out`}>
+          About
+        </a>
+        <a href="#services" className={`${activeSection === 'services' ? 'text-blue-600 border-b-2 border-blue-600' : 'hover:text-blue-600'} transition-all duration-300 ease-in-out`}>
+          Services
+        </a>
+        <a href="#portfolio" className={`${activeSection === 'portfolio' ? 'text-blue-600 border-b-2 border-blue-600' : 'hover:text-blue-600'} transition-all duration-300 ease-in-out`}>
+          Portfolio
+        </a>
+        <a href="#contact" className={`${activeSection === 'contact' ? 'text-blue-600 border-b-2 border-blue-600' : 'hover:text-blue-600'} transition-all duration-300 ease-in-out`}>
+          Contact
+        </a>
       </div>
-      <Transition
-        show={isOpen}
-        enter="transition ease-out duration-300"
-        enterFrom="opacity-0 transform -translate-y-10"
-        enterTo="opacity-100 transform translate-y-0"
-        leave="transition ease-in duration-200"
-        leaveFrom="opacity-100 transform translate-y-0"
-        leaveTo="opacity-0 transform -translate-y-10"
-      >
-        <div className="md:hidden bg-white border-t-2 border-gray-200 space-y-4 pt-4 pb-4 text-lg">
-          <a href="#about" className="block hover:text-blue-600 transition duration-300 ease-in-out ml-1">
-            About
-          </a>
-          <a href="#services" className="block hover:text-blue-600 transition duration-300 ease-in-out ml-1">
-            Services
-          </a>
-          <a href="#portfolio" className="block hover:text-blue-600 transition duration-300 ease-in-out ml-1">
-            Portfolio
-          </a>
-          <a href="#contact" className="block hover:text-blue-600 transition duration-300 ease-in-out ml-1">
-            Contact
-          </a>
-        </div>
-      </Transition>
-    </nav>
+      <button className="md:hidden text-3xl focus:outline-none" onClick={toggleMenu}>
+        {isOpen ? '✖' : '☰'}
+      </button>
+    </div>
+    <Transition
+      show={isOpen}
+      enter="transition ease-out duration-300"
+      enterFrom="opacity-0 transform -translate-y-10"
+      enterTo="opacity-100 transform translate-y-0"
+      leave="transition ease-in duration-200"
+      leaveFrom="opacity-100 transform translate-y-0"
+      leaveTo="opacity-0 transform -translate-y-10"
+    >
+      <div className="md:hidden bg-white border-t-2 border-gray-200 space-y-4 pt-4 pb-4 text-lg">
+        <a href="#about" className="block hover:text-blue-600 transition-all duration-300 ease-in-out">
+          About
+        </a>
+        <a href="#services" className="block hover:text-blue-600 transition-all duration-300 ease-in-out">
+          Services
+        </a>
+        <a href="#portfolio" className="block hover:text-blue-600 transition-all duration-300 ease-in-out">
+          Portfolio
+        </a>
+        <a href="#contact" className="block hover:text-blue-600 transition-all duration-300 ease-in-out">
+          Contact
+        </a>
+      </div>
+    </Transition>
+  </nav>
   );
 };
 
@@ -200,24 +187,21 @@ const ServicesSection = () => {
       description: 'Creating customized WordPress websites to meet your business needs, with a focus on performance and aesthetics.',
       image: 'images/word.jpeg',
     },
-    {
-      title: 'Freelancing Support',
-      description: 'Connecting you with skilled freelancers for photography, content creation, marketing, and more.',
-      image: 'images/freelancing_support.jpeg',
-    },
+
   ];
 
   return (
     <section id="services" className="bg-gray-100 py-16">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-extrabold text-center mb-12 text-blue-900">Our Services</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <ServiceCard key={index} {...service} />
-          ))}
-        </div>
+    <div className="container mx-auto px-4">
+      <h2 className="text-4xl font-extrabold text-center mb-12 text-blue-900">Our Services</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service, index) => (
+          <ServiceCard key={index} {...service} />
+        ))}
       </div>
-    </section>
+    </div>
+  </section>
+  
   );
 };
 
