@@ -51,10 +51,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-white text-gray-900 p-4 shadow-lg fixed top-0 w-full z-20 transition-all duration-300 ease-in-out transform">
+    <nav className="bg-white text-gray-900 p-3 shadow-lg fixed top-0 w-full z-20 transition-all duration-300 ease-in-out transform">
     <div className="container mx-auto flex justify-between items-center">
       <a href="/" className="flex items-center text-3xl font-extrabold tracking-tight text-blue-900">
-        <img src="images/logo.png" alt="Logo" className="h-10 w-40 mr-2" />
+        <img src="images/logo.png" alt="Logo" className="h-8 w-40 mr-2" />
       </a>
       <div className="hidden md:flex space-x-8 text-lg">
         <a href="#about" className={`${activeSection === 'about' ? 'text-blue-600 border-b-2 border-blue-600' : 'hover:text-blue-600'} transition-all duration-300 ease-in-out`}>
@@ -125,7 +125,7 @@ const HeroSection = () => {
           </p>
           <a
             href="#services"
-            className="inline-block bg-white text-blue-600 px-8 py-3 rounded-full shadow-lg font-bold text-lg transition-transform transform hover:scale-105 hover:shadow-xl"
+            className="inline-block bg-white text-blue-600 px-4 py-2 rounded-full shadow-lg font-bold  transition-transform transform hover:scale-105 hover:shadow-xl"
           >
             Explore Services
           </a>
@@ -145,7 +145,7 @@ const AboutSection = () => {
   return (
     <section id="about" className="bg-gray-50 py-16">
       <div className="container mx-auto text-center px-4">
-        <h2 className="text-4xl font-extrabold mb-8 text-blue-900">About innovatepi</h2>
+        <h2 className="text-xl font-extrabold mb-8 text-blue-900">About innovatepi</h2>
         <p className="text-gray-700 text-lg leading-relaxed max-w-2xl mx-auto">
           At innovatepi, we specialize in delivering state-of-the-art software solutions and freelancing services
           specifically for the restaurant industry. Our mission is to enhance your operational efficiency and customer
@@ -193,7 +193,7 @@ const ServicesSection = () => {
   return (
     <section id="services" className="bg-gray-100 py-16">
     <div className="container mx-auto px-4">
-      <h2 className="text-4xl font-extrabold text-center mb-12 text-blue-900">Our Services</h2>
+      <h2 className="text-xl font-extrabold text-center mb-12 text-blue-900">Our Services</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
           <ServiceCard key={index} {...service} />
@@ -232,7 +232,7 @@ const PortfolioSection = () => {
   return (
     <section id="portfolio" className="bg-white py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-extrabold text-center mb-12 text-blue-900">Our Portfolio</h2>
+        <h2 className="text-xl font-extrabold text-center mb-12 text-blue-900">Our Portfolio</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div
@@ -257,28 +257,28 @@ const ContactSection = () => {
   return (
     <section id="contact" className="bg-gray-50 py-16">
       <div className="container mx-auto text-center px-4">
-        <h2 className="text-4xl font-extrabold mb-8 text-blue-900">Contact Us</h2>
+        <h2 className="text-xl font-extrabold mb-8 text-blue-900">Contact Us</h2>
         <p className="text-gray-700 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
           We’d love to hear from you! Whether you’re interested in our services or just want to say hello, get in touch with us.
         </p>
         <div className="flex flex-wrap justify-center items-center mb-8 space-y-4 md:space-y-0 md:space-x-4">
           <a
             href="mailto:contact@innovatepi.com"
-            className="flex items-center bg-blue-600 text-white px-8 py-3 rounded-full shadow-lg font-bold text-lg transition transform hover:scale-105 hover:shadow-xl"
+            className="flex items-center bg-blue-600 text-white px-3 py-2 rounded-full shadow-lg font-bold  transition transform hover:scale-105 hover:shadow-xl"
           >
             <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
             Email Us
           </a>
           <a
             href="tel:+1234567890"
-            className="flex items-center bg-blue-600 text-white px-8 py-3 rounded-full shadow-lg font-bold text-lg transition transform hover:scale-105 hover:shadow-xl"
+            className="flex items-center bg-blue-600 text-white  px-3 py-2 rounded-full shadow-lg font-bold text-lg transition transform hover:scale-105 hover:shadow-xl"
           >
             <FontAwesomeIcon icon={faPhone} className="mr-2" />
             Call Us
           </a>
           <a
             href="https://www.facebook.com/YourPage"
-            className="flex items-center bg-blue-600 text-white px-8 py-3 rounded-full shadow-lg font-bold text-lg transition transform hover:scale-105 hover:shadow-xl"
+            className="flex items-center bg-blue-600 text-white  px-3 py-2 rounded-full shadow-lg font-bold text-lg transition transform hover:scale-105 hover:shadow-xl"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -287,7 +287,7 @@ const ContactSection = () => {
           </a>
           <a
             href="https://www.instagram.com/YourPage"
-            className="flex items-center bg-blue-600 text-white px-8 py-3 rounded-full shadow-lg font-bold text-lg transition transform hover:scale-105 hover:shadow-xl"
+            className="flex items-center bg-blue-600 text-white  px-3 py-2 rounded-full shadow-lg font-bold text-lg transition transform hover:scale-105 hover:shadow-xl"
             target="_blank"
             rel="noopener noreferrer"
           >
