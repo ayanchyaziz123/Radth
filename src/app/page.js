@@ -112,8 +112,10 @@ const HeroSection = () => {
         <img
           src="/images/cover.jpeg" // Use the software image
           alt="Software Development"
-          className="h-full object-cover opacity-80" // Adjust opacity and fit
+          className="h-full object-cover" // Adjust opacity and fit
         />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black opacity-30"></div> {/* Reduced opacity for brighter effect */}
       </div>
 
       {/* Text Section */}
