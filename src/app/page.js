@@ -4,7 +4,7 @@ import { Transition } from '@headlessui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
-
+import { FaCode, FaBullhorn, FaWordpress, FaSearch, FaMobileAlt, FaChartLine, FaLaptopCode, FaPalette, FaCloud, FaShieldAlt, FaEnvelope, FaBrain } from 'react-icons/fa'; // Import additional icons
 import { motion } from 'framer-motion';
 
 const PageTransition = ({ children }) => {
@@ -102,30 +102,37 @@ const Navbar = () => {
   );
 };
 
-// HeroSection component
+
+
 const HeroSection = () => {
   return (
-    <div className="relative min-h-screen bg-gradient-to-r from-dark-800 to-dark-400 flex items-center">
-      
-      <div className="relative w-full lg:w-1/2 h-96 lg:h-full">
+    <div className="relative min-h-screen bg-gradient-to-r from-gray-800 to-gray-600 flex items-center">
+      {/* Image Section */}
+      <div className="relative w-full lg:w-1/2 h-96 lg:h-full flex items-center justify-center">
         <img
-          src="images/cover.jpeg"
-          alt="Hero Image"
-          className="inset-0 w-full h-full object-cover"
+          src="/images/cover.jpeg" // Use the software image
+          alt="Software Development"
+          className="h-full object-cover opacity-80" // Adjust opacity and fit
         />
       </div>
-      
-      <div className="flex-1 bg-blue-600 lg:bg-transparent flex items-center justify-center lg:justify-start text-center lg:text-left py-16 px-6 lg:px-16">
+
+      {/* Text Section */}
+      <div className="flex-1 flex flex-col items-center lg:items-start justify-center text-center lg:text-left py-16 px-6 lg:px-16">
         <div className="relative z-10 text-white max-w-xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
-            Empowering Restaurants with Cutting-Edge Software
+          {/* Heading */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-2 leading-tight">
+            Empowering Businesses with Cutting-Edge Software
           </h1>
-          <p className="text-lg md:text-xl mb-8">
-            We offer a range of innovative solutions tailored for the restaurant industry. Our services include digital marketing, software development, mobile app and website creation, and more. Let us transform your digital presence.
+
+          {/* Description */}
+          <p className="text-lg md:text-xl mb-4 text-gray-200">
+            We offer innovative solutions tailored for various industries: digital marketing, custom software development, mobile apps, and website creation.
           </p>
+
+          {/* CTA Button */}
           <a
             href="#services"
-            className="inline-block bg-white text-blue-600 px-4 py-2 rounded-full shadow-lg font-bold  transition-transform transform hover:scale-105 hover:shadow-xl"
+            className="inline-block bg-white text-blue-600 px-6 py-3 rounded-full shadow-lg font-bold transition-transform transform hover:scale-105 hover:shadow-xl"
           >
             Explore Services
           </a>
@@ -140,12 +147,13 @@ const HeroSection = () => {
 
 
 
+
 // AboutSection component
 const AboutSection = () => {
   return (
     <section id="about" className="bg-gray-50 py-16">
       <div className="container mx-auto text-center px-4">
-        <h2 className="text-xl font-extrabold mb-8 text-blue-900">About innovatepi</h2>
+        <h2 className="text-2xl font-extrabold mb-8 text-blue-900">About innovatepi</h2>
         <p className="text-gray-700 text-lg leading-relaxed max-w-2xl mx-auto">
           At innovatepi, we specialize in delivering state-of-the-art software solutions and freelancing services
           specifically for the restaurant industry. Our mission is to enhance your operational efficiency and customer
@@ -156,54 +164,65 @@ const AboutSection = () => {
   );
 };
 
-// ServiceCard component
-const ServiceCard = ({ title, description, image }) => {
-  return (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-      <img src={image} alt={title} className="w-full h-48 object-cover" />
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-900">{title}</h3>
-        <p className="text-gray-700 mt-4">{description}</p>
-      </div>
-    </div>
-  );
-};
-
-// ServicesSection component
 const ServicesSection = () => {
   const services = [
     {
       title: 'Custom Software Development',
       description: 'Tailored software solutions to optimize your restaurant’s operations and elevate customer engagement.',
-      image: 'images/softdev.jpeg',
+      icon: <FaCode size={40} className="text-blue-600" />,
     },
     {
       title: 'Digital Marketing',
       description: 'Effective digital marketing strategies to boost your restaurant’s online presence, attract more customers, and increase sales.',
-      image: 'images/digital_marketing.jpeg', // Update the image path as needed
+      icon: <FaBullhorn size={40} className="text-blue-600" />,
     },
     {
       title: 'WordPress Website Development',
       description: 'Creating customized WordPress websites to meet your business needs, with a focus on performance and aesthetics.',
-      image: 'images/word.jpeg',
+      icon: <FaWordpress size={40} className="text-blue-600" />,
     },
-
+    {
+      title: 'Search Engine Optimization (SEO)',
+      description: 'SEO services to help businesses rank higher in search engine results, driving organic traffic to their websites.',
+      icon: <FaSearch size={40} className="text-blue-600" />,
+    },
+    {
+      title: 'Social Media Management',
+      description: 'Manage social media accounts, create content strategies, and engage with your audience to grow your online presence.',
+      icon: <FaMobileAlt size={40} className="text-blue-600" />,
+    },
+    {
+      title: 'Pay-Per-Click (PPC) Advertising',
+      description: 'Paid advertising services through platforms like Google Ads and social media to help businesses get more visibility.',
+      icon: <FaChartLine size={40} className="text-blue-600" />,
+    },
   ];
 
   return (
     <section id="services" className="bg-gray-100 py-16">
-    <div className="container mx-auto px-4">
-      <h2 className="text-xl font-extrabold text-center mb-12 text-blue-900">Our Services</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((service, index) => (
-          <ServiceCard key={index} {...service} />
-        ))}
+      <div className="container mx-auto px-4">
+        {/* Section Title */}
+        <h2 className="text-2xl font-bold text-center mb-12 text-blue-900">Our Top Services</h2>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <ServiceCard key={index} {...service} />
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-  
+    </section>
   );
 };
+
+const ServiceCard = ({ title, description, icon }) => (
+  <div className="bg-white shadow-lg rounded-lg p-6 text-center flex flex-col items-center">
+    <div className="mb-4 flex justify-center items-center">
+      {icon}
+    </div>
+    <h3 className="text-lg text-gray-800 font-semibold mb-2">{title}</h3>
+    <p className="text-gray-600">{description}</p>
+  </div>
+);
 
 
 // PortfolioSection component
@@ -232,7 +251,7 @@ const PortfolioSection = () => {
   return (
     <section id="portfolio" className="bg-white py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-xl font-extrabold text-center mb-12 text-blue-900">Our Portfolio</h2>
+        <h2 className="text-2xl font-extrabold text-center mb-12 text-blue-900">Our Portfolio</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div
@@ -257,7 +276,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="bg-gray-50 py-16">
       <div className="container mx-auto text-center px-4">
-        <h2 className="text-xl font-extrabold mb-8 text-blue-900">Contact Us</h2>
+        <h2 className="text-2xl font-extrabold mb-8 text-blue-900">Contact Us</h2>
         <p className="text-gray-700 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
           We’d love to hear from you! Whether you’re interested in our services or just want to say hello, get in touch with us.
         </p>
