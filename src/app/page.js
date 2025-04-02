@@ -10,6 +10,7 @@ import ServicesSection from './components/ServicesSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import AboutSection from './components/AboutSection';
+import HeroSection from './components/HeroSection';
 
 const PageTransition = ({ children }) => {
   return (
@@ -104,44 +105,7 @@ const Navbar = () => {
 
 
 
-  const HeroSection = () => {
-    return (
-      <div className="relative min-h-screen bg-gradient-to-r from-gray-900 to-gray-700 flex items-center">
-        {/* Image Section */}
-        <div className="relative w-full lg:w-1/2 h-96 lg:h-full flex items-center justify-center">
-          <img
-            src="/images/radth-cover.jpeg" // Update with your radth image
-            alt="radth.com - IT & AI Solutions"
-            className="h-full object-cover"
-          />
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black opacity-40"></div>
-        </div>
-  
-        {/* Text Section */}
-        <div className="flex-1 flex flex-col items-center lg:items-start justify-center text-center lg:text-left py-16 px-6 lg:px-16">
-          <div className="relative z-10 text-white max-w-xl">
-            {/* Heading */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-2 leading-tight">
-              Smart & Reliable IT Solutions for Your Business
-            </h1>
-  
-            {/* Description */}
-            <p className="text-lg md:text-xl mb-4 text-gray-200">
-              radth.com delivers website development, AI-powered tools, mobile apps, and technical consultancy for small businesses, startups, and individuals.
-            </p>
-  
-            {/* CTA Button */}
-            <a
-              href="#services"
-              className="inline-block bg-white text-gray-900 px-6 py-3 rounded-full shadow-lg font-bold transition-transform transform hover:scale-105 hover:shadow-xl"
-            >
-              Explore Our Services
-            </a>
-          </div>
-        </div>
-      </div>
-    )}
+
   
 
 
