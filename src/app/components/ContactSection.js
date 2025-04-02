@@ -8,8 +8,9 @@ const ContactSection = () => {
       <div className="container mx-auto text-center px-4">
         <h2 className="text-3xl font-extrabold mb-8 text-blue-900">Contact</h2>
         <p className="text-gray-700 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
-          Have a project in mind or want to learn more about our IT & AI services? Connect with us and let's build something great together.
-        </p>
+  Have a project in mind or want to learn more about our IT &amp; AI services? Connect with us and let&apos;s build something great together.
+</p>
+
 
         <div className="flex flex-wrap justify-center items-center mb-8 space-y-4 md:space-y-0 md:space-x-4">
           <a
