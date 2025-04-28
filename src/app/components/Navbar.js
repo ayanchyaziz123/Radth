@@ -58,7 +58,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="/" className="flex items-center space-x-2">
-        <img src="/images/logo.png" alt="Logo" className="h-10 w-auto rounded-sm" />
+        <img src="/images/logo.png" alt="Logo" className="h-8 w-auto rounded-sm" />
           {/* <span className={`text-xl font-bold tracking-tight ${scrolled ? 'text-blue-900' : 'text-white'}`}>
             RadTH
           </span> */}
