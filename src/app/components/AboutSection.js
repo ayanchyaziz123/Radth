@@ -68,7 +68,7 @@ const AboutSection = () => {
             </p>
             
             <p className="text-gray-600 mb-8">
-              Founded in 2018, we've grown from a small team of passionate developers to a full-service 
+              Founded in 2018, we&#39;ve grown from a small team of passionate developers to a full-service 
               technology company serving clients across multiple industries. We combine technical expertise 
               with business acumen to deliver solutions that drive real growth and efficiency.
             </p>
