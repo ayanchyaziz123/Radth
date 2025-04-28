@@ -53,7 +53,7 @@ const ContactSection = () => {
           </span>
           <h2 className="text-4xl font-bold text-gray-900 mb-6">Let&#39;s Start a Conversation</h2>
           <p className="text-lg text-gray-600">
-            Have a project in mind or want to learn more about our IT &amp; AI services? Connect with us and let's build something great together.
+            Have a project in mind or want to learn more about our IT &amp; AI services? Connect with us and let&#39;s build something great together.
           </p>
         </div>
 
