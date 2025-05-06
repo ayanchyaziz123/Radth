@@ -21,7 +21,7 @@ const Footer = () => {
           <div>
             <div className="mb-6">
               <a href="/" className="flex items-center">
-                <img src="/images/logo-white.png" alt="RadTH Logo" className="h-8 w-auto" />
+                <img src="/images/logo-dark.png" alt="RadTH Logo" className="h-8 w-auto" />
               </a>
             </div>
             <p className="text-gray-400 mb-6 text-sm leading-relaxed">

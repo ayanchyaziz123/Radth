@@ -70,8 +70,8 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-800 mb-1">Email</h4>
-                    <a href="mailto:contact@radth.com" className="text-blue-600 hover:underline">
-                      contact@radth.com
+                    <a href="mailto:radth.co@gmail.com" className="text-blue-600 hover:underline">
+                      radth.co@gmail.com
                     </a>
                   </div>
                 </div>
@@ -164,12 +164,12 @@ const ContactSection = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-gray-800"
                         required
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1 ">
                         Your Email
                       </label>
                       <input
@@ -178,7 +178,7 @@ const ContactSection = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-gray-800"
                         required
                       />
                     </div>
@@ -194,7 +194,7 @@ const ContactSection = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-gray-800"
                       required
                     />
                   </div>
@@ -209,7 +209,7 @@ const ContactSection = () => {
                       rows="5"
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-gray-800"
                       required
                     ></textarea>
                   </div>
