@@ -104,7 +104,7 @@ const TeamSection = () => {
       bio: 'Infrastructure expert specializing in cloud architecture, DevOps practices, and scalable system design.',
       specialties: ['AWS/Azure', 'Kubernetes', 'Docker', 'Terraform', 'System Architecture'],
       achievements: ['Managed infrastructure for 50M+ users', 'Multi-cloud certified', 'Reduced costs by 40%'],
-      quote: 'The cloud is not just about technology; it\'s about enabling possibilities.',
+      quote: 'The cloud is not just about technology; it&apos;s about enabling possibilities.',
       social: {
         linkedin: '#',
         twitter: '#',
@@ -272,7 +272,7 @@ const TeamSection = () => {
                 <div className="relative">
                   <FaQuoteLeft className="absolute -top-2 -left-2 text-gray-200 text-2xl" />
                   <blockquote className="text-lg italic text-gray-700 pl-8">
-                    "{teamMembers[activeModal].quote}"
+                    &ldquo;{teamMembers[activeModal].quote}&rdquo;
                   </blockquote>
                 </div>
 

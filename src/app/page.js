@@ -53,7 +53,6 @@ const App = () => {
       
       {/* About Section moved to third position */}
       <AboutSection />
-      <TeamSection/>
       <BlogSection/>
       
       {/* Contact Section stays toward the end - logical flow after learning about services */}

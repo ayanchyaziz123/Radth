@@ -152,7 +152,7 @@ const ServicesSection = () => {
           </h2>
           <p className="text-lg text-gray-600 mb-8">
             We offer end-to-end technology solutions designed to help your business 
-            grow and succeed in today's digital landscape.
+            grow and succeed in today&rsquo;s digital landscape.
           </p>
         </div>
         
