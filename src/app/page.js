@@ -12,6 +12,9 @@ import Footer from './components/Footer';
 import AboutSection from './components/AboutSection';
 import HeroSection from './components/HeroSection';
 import Navbar from './components/Navbar';
+import BlogSection from './components/BlogSection';
+import TeamSection from './components/TeamSection';
+import PricingSection from './components/PricingSection';
 
 const PageTransition = ({ children }) => {
   return (
@@ -45,9 +48,13 @@ const App = () => {
       <PageTransition>
         <ServicesSection />
       </PageTransition>
+
+      <PricingSection/>
       
       {/* About Section moved to third position */}
       <AboutSection />
+      <TeamSection/>
+      <BlogSection/>
       
       {/* Contact Section stays toward the end - logical flow after learning about services */}
       <PageTransition>

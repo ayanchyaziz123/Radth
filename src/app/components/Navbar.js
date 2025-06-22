@@ -41,20 +41,18 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Testimonials', href: '#testimonials' },
+    { name: 'About', href: '#about' },
+    { name: 'Blog', href: '#blog' },
     { name: 'Contact', href: '#contact' },
   ];
 
   return (
-    <nav 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ease-in-out ${
-        scrolled 
-          ? 'bg-white text-gray-900 shadow-lg py-2' 
+    <nav
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ease-in-out ${scrolled
+          ? 'bg-white text-gray-900 shadow-lg py-2'
           : 'bg-transparent text-white py-4'
-      }`}
+        }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="/" className="flex items-center space-x-2">
@@ -68,34 +66,34 @@ const Navbar = () => {
             RadTH
           </span> */}
         </a>
-        
+
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
-            <a 
+            <a
               key={link.name}
-              href={link.href} 
+              href={link.href}
               className={`
                 relative text-base font-medium transition-all duration-300 
-                ${activeSection === link.href.substring(1) 
-                  ? scrolled ? 'text-blue-600' : 'text-blue-300' 
+                ${activeSection === link.href.substring(1)
+                  ? scrolled ? 'text-blue-600' : 'text-blue-300'
                   : scrolled ? 'text-gray-800 hover:text-blue-600' : 'text-white hover:text-blue-200'
                 }
               `}
             >
               {link.name}
-              <span 
+              <span
                 className={`absolute bottom-0 left-0 w-full h-0.5 transform scale-x-0 transition-transform duration-300 
                 ${activeSection === link.href.substring(1) ? 'bg-blue-600 scale-x-100' : 'bg-blue-600'}`}
               />
             </a>
           ))}
-          
-          <button 
+
+          <button
             className={`
               px-5 py-2 rounded-md text-sm font-medium transition-all duration-300
-              ${scrolled 
-                ? 'bg-blue-600 text-white hover:bg-blue-700' 
+              ${scrolled
+                ? 'bg-blue-600 text-white hover:bg-blue-700'
                 : 'bg-white text-blue-900 hover:bg-blue-50'
               }
             `}
@@ -105,15 +103,15 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden focus:outline-none" 
+        <button
+          className="md:hidden focus:outline-none"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
-          <svg 
-            className={`w-6 h-6 ${scrolled ? 'text-gray-900' : 'text-white'}`} 
-            fill="none" 
-            viewBox="0 0 24 24" 
+          <svg
+            className={`w-6 h-6 ${scrolled ? 'text-gray-900' : 'text-white'}`}
+            fill="none"
+            viewBox="0 0 24 24"
             stroke="currentColor"
           >
             {isOpen ? (
@@ -154,9 +152,12 @@ const Navbar = () => {
               </a>
             ))}
             <div className="pt-2">
-              <button className="w-full px-5 py-3 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition-all duration-300">
+              <a
+                href="#contact"
+                className="w-full px-5 py-3 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition-all duration-300 block text-center"
+              >
                 Get Started
-              </button>
+              </a>
             </div>
           </div>
         </div>
