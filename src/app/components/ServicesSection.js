@@ -50,7 +50,7 @@ const ServicesSection = () => {
       color: 'from-purple-500 to-purple-700',
       bgLight: 'bg-purple-50',
       iconColor: 'text-purple-600',
-      link: '/mobile-app'
+      link: '/mobile'
     },
     {
       title: 'Digital Marketing',
