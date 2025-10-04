@@ -49,7 +49,7 @@ const HeroSection = () => {
                 href="#contact"
                 className="border border-blue-500/30 bg-blue-500/10 backdrop-blur-sm px-8 py-4 rounded-lg font-semibold hover:bg-blue-500/20 transition flex items-center justify-center"
               >
-                Schedule a Consultation
+                Contact
               </a>
             </div>
             
@@ -57,7 +57,7 @@ const HeroSection = () => {
             <div className="mt-12 pt-8 border-t border-gray-800">
               <p className="text-sm text-gray-400 mb-4">Trusted by innovative companies</p>
               <div className="flex flex-wrap gap-6 items-center opacity-70">
-                {['Company 1', 'Company 2', 'Company 3', 'Company 4'].map((company, index) => (
+                {['Google', 'Amazone', 'Facebook', 'OpenAI'].map((company, index) => (
                   <div key={index} className="text-sm font-bold tracking-wide text-gray-300">
                     {company}
                   </div>

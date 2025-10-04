@@ -48,8 +48,6 @@ const App = () => {
       <PageTransition>
         <ServicesSection />
       </PageTransition>
-
-      <PricingSection/>
       
       {/* About Section moved to third position */}
       <AboutSection />
