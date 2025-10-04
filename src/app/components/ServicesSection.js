@@ -1,231 +1,91 @@
 import { useState } from 'react';
 import { 
-  FaCode, 
-  FaBullhorn, 
-  FaRobot, 
-  FaSearch, 
-  FaMobileAlt, 
-  FaCloud, 
-  FaArrowRight, 
-  FaTimes,
-  FaWordpress,
-  FaReact,
-  FaEnvelope,
-  FaUser,
-  FaPhone,
-  FaBuilding,
-  FaCheckCircle
-} from 'react-icons/fa';
+  Code, 
+  Megaphone, 
+  Bot, 
+  Search, 
+  Smartphone, 
+  ArrowRight,
+  Globe
+} from 'lucide-react';
+
+const WordPressIcon = () => (
+  <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12.158 12.786L9.46 20.625c.806.237 1.657.366 2.54.366 1.047 0 2.051-.18 2.986-.51-.024-.038-.046-.078-.065-.12l-2.763-7.575zm-5.25-3.713c0-1.202.432-2.034.806-2.68.495-.806.96-1.488.96-2.293 0-.898-.684-1.734-1.665-1.734-.044 0-.087.005-.13.008C8.002 1.083 9.903 0 12.054 0c2.815 0 5.277 1.456 6.72 3.664-.043-.003-.084-.008-.13-.008-.96 0-1.64 1.202-1.64 2.488 0 .806.432 1.488.806 2.293.373.65.806 1.488.806 2.68 0 .648-.21 1.456-.554 2.488l-.726 2.453-2.634-7.843c.437-.022.83-.065.83-.065.392-.044.347-.62-.043-.598 0 0-1.18.087-1.94.087-.714 0-1.92-.087-1.92-.087-.39-.022-.434.577-.043.598 0 0 .347.043.714.065l1.06 2.907-1.487 4.46-2.473-7.367c.436-.022.828-.065.828-.065.392-.044.348-.62-.043-.598 0 0-1.18.087-1.94.087-.136 0-.296-.003-.466-.009C3.41 4.265 2 6.72 2 9.5c0 3.86 2.88 7.04 6.604 7.478l-2.696-7.405zm12.612-4.074c.043.32.067.665.067 1.036 0 1.02-.185 2.163-.74 3.593l-2.978 8.61C18.767 17.43 21 14.756 21 11.5c0-2.178-.776-4.177-2.066-5.736l.586 1.235zM12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+);
+
+const ReactIcon = () => (
+  <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/>
+  </svg>
+);
 
 const ServicesSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [activeModal, setActiveModal] = useState(null);
-  const [showDemoForm, setShowDemoForm] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    services: [],
-    message: ''
-  });
-  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const services = [
     {
       title: 'WordPress Development',
       description: 'Professional WordPress websites with custom themes, plugins, and e-commerce functionality for businesses of all sizes.',
-      icon: <FaWordpress size={28} className="text-blue-600" />,
+      icon: <WordPressIcon />,
       color: 'from-blue-500 to-blue-700',
       bgLight: 'bg-blue-50',
-      details: {
-        fullDescription: 'Our WordPress development services provide you with powerful, scalable websites that are easy to manage and optimized for performance. We specialize in creating industry-specific solutions including restaurant websites, e-commerce stores, professional services, and more.',
-        features: [
-          'Restaurant websites with online menus & reservations',
-          'Restaurant management systems & POS integration',
-          'WooCommerce e-commerce stores & marketplaces',
-          'Law firm websites with case management',
-          'Real estate portals with property listings',
-          'Healthcare & medical practice websites',
-          'Corporate & business portfolio sites',
-          'Educational institutions & course platforms',
-          'Non-profit & charity organization sites',
-          'Custom plugin development & integrations',
-          'Performance optimization & security hardening',
-          'SEO-friendly architecture & content migration'
-        ],
-        benefits: 'WordPress websites are cost-effective, SEO-friendly, and give you complete control over your content. Our industry-specific solutions help you establish a strong online presence with features tailored to your business type, keeping long-term maintenance simple and affordable.',
-        process: 'We start by understanding your industry requirements and business goals, then design and develop a custom WordPress solution with industry-specific features. Our process includes competitor analysis, custom design, specialized plugin integration, testing, and comprehensive training to ensure you can manage your site effectively.'
-      }
+      iconColor: 'text-blue-600',
+      link: '/wordpress'
     },
     {
       title: 'Custom Web Development',
       description: 'High-performance React applications with server-side rendering, modern UI/UX, and advanced functionality for scalable businesses.',
-      icon: <FaReact size={28} className="text-cyan-600" />,
+      icon: <ReactIcon />,
       color: 'from-cyan-500 to-cyan-700',
       bgLight: 'bg-cyan-50',
-      details: {
-        fullDescription: 'Build lightning-fast, SEO-optimized web applications with Next.js. Our development team creates modern, scalable applications that provide exceptional user experiences and superior performance compared to traditional web solutions.',
-        features: [
-          'Server-side rendering (SSR) & static generation',
-          'Modern React component architecture',
-          'API routes & backend integration',
-          'Advanced SEO optimization',
-          'Progressive Web App (PWA) features',
-          'Real-time data synchronization',
-          'Authentication & user management',
-          'Performance monitoring & analytics'
-        ],
-        benefits: 'Next.js applications offer superior performance, better SEO capabilities, enhanced user experience, and scalable architecture that grows with your business. Perfect for businesses that need competitive advantages through technology.',
-        process: 'We follow modern development practices starting with user research and technical planning, then implement with React best practices, server-side optimization, and comprehensive testing. Our approach ensures your application is future-ready and maintainable.'
-      }
+      iconColor: 'text-cyan-600',
+      link: '/web-development'
     },
     {
       title: 'Custom Mobile App Development',
       description: 'Building tailored software solutions to streamline business operations and improve efficiency.',
-      icon: <FaCode size={28} className="text-purple-600" />,
+      icon: <Smartphone className="text-purple-600" size={28} />,
       color: 'from-purple-500 to-purple-700',
       bgLight: 'bg-purple-50',
-      details: {
-        fullDescription: 'Our development team creates custom software applications designed specifically for your business needs. We utilize the latest technologies and methodologies to deliver robust, scalable, and maintainable solutions.',
-        features: [
-          'Web & desktop applications',
-          'API development & integration',
-          'Enterprise solutions',
-          'Database design & optimization',
-          'Legacy system modernization',
-          'DevOps & CI/CD implementation'
-        ],
-        benefits: 'Our custom software gives you a competitive edge by automating manual processes, reducing operational costs, and providing data-driven insights for better decision making.',
-        process: 'We follow an agile development methodology with regular check-ins, allowing you to provide feedback throughout the development lifecycle. This ensures the final product aligns perfectly with your business requirements.'
-      }
+      iconColor: 'text-purple-600',
+      link: '/mobile-app'
     },
     {
       title: 'Digital Marketing',
       description: 'Strategic digital marketing and branding services to grow your visibility and reach.',
-      icon: <FaBullhorn size={28} className="text-emerald-600" />,
+      icon: <Megaphone className="text-emerald-600" size={28} />,
       color: 'from-emerald-500 to-emerald-700',
       bgLight: 'bg-emerald-50',
-      details: {
-        fullDescription: 'Drive growth with our comprehensive digital marketing strategies. We help businesses establish their online presence, reach their target audience, and convert prospects into loyal customers.',
-        features: [
-          'Social media management & advertising',
-          'Content marketing & creation',
-          'Email marketing campaigns',
-          'PPC advertising (Google Ads, Meta)',
-          'Marketing automation',
-          'Performance analytics & reporting'
-        ],
-        benefits: 'Our digital marketing solutions increase your brand visibility, generate quality leads, and improve conversion rates, all while providing measurable ROI on your marketing investment.',
-        process: 'We begin with a thorough market analysis and competitor research, then develop a customized strategy that aligns with your business goals. Our team continuously monitors campaign performance and makes data-driven adjustments.'
-      }
+      iconColor: 'text-emerald-600',
+      link: '/digital-marketing'
     },
     {
       title: 'AI-Powered Solutions',
       description: 'Implementing smart AI solutions to automate tasks and enhance business decision-making.',
-      icon: <FaRobot size={28} className="text-red-600" />,
+      icon: <Bot className="text-red-600" size={28} />,
       color: 'from-red-500 to-red-700',
       bgLight: 'bg-red-50',
-      details: {
-        fullDescription: 'Leverage the power of artificial intelligence for your business. Our AI solutions help you automate complex tasks, gain valuable insights from your data, and create more personalized user experiences.',
-        features: [
-          'Machine learning models',
-          'Natural language processing',
-          'Computer vision applications',
-          'Predictive analytics',
-          'Chatbots & virtual assistants',
-          'Business intelligence automation'
-        ],
-        benefits: 'AI integration can dramatically improve operational efficiency, reduce human error, uncover hidden patterns in your data, and enable more personalized customer experiences.',
-        process: 'We assess your business challenges, identify AI opportunities, develop proof-of-concepts, and then scale successful solutions. Our team ensures that AI implementations align with your strategic objectives.'
-      }
+      iconColor: 'text-red-600',
+      link: '/ai-solutions'
     },
-
     {
       title: 'Search Engine Optimization',
       description: 'Helping your website rank higher in search engines and attract more targeted organic traffic.',
-      icon: <FaSearch size={28} className="text-amber-600" />,
+      icon: <Search className="text-amber-600" size={28} />,
       color: 'from-amber-500 to-amber-700',
       bgLight: 'bg-amber-50',
-      details: {
-        fullDescription: 'Improve your online visibility with our SEO expertise. We help businesses rank higher in search engine results pages (SERPs) and drive qualified organic traffic to their websites.',
-        features: [
-          'Keyword research & analysis',
-          'On-page optimization',
-          'Technical SEO audits',
-          'Content strategy & creation',
-          'Link building campaigns',
-          'Local SEO optimization'
-        ],
-        benefits: 'Effective SEO delivers sustainable, long-term traffic growth, increases brand credibility, and provides higher ROI compared to paid advertising over time.',
-        process: 'Our approach begins with a comprehensive website audit, competitor analysis, and keyword research. We then implement a customized strategy focused on both technical optimizations and content improvements.'
-      }
+      iconColor: 'text-amber-600',
+      link: '/seo'
     },
   ];
 
-  const openModal = (index) => {
-    setActiveModal(index);
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeModal = () => {
-    setActiveModal(null);
-    document.body.style.overflow = 'auto';
-  };
-
-  const openDemoForm = () => {
-    setShowDemoForm(true);
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeDemoForm = () => {
-    setShowDemoForm(false);
-    setFormSubmitted(false);
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      services: [],
-      message: ''
-    });
-    document.body.style.overflow = 'auto';
-  };
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleServiceToggle = (serviceName) => {
-    setFormData(prev => ({
-      ...prev,
-      services: prev.services.includes(serviceName)
-        ? prev.services.filter(s => s !== serviceName)
-        : [...prev.services, serviceName]
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you would typically send the data to your backend
-    console.log('Demo request submitted:', formData);
-    setFormSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      closeDemoForm();
-    }, 3000);
-  };
-
   return (
-    <section id="services" className="py-24 bg-gradient-to-b from-white to-gray-100">
+    <section id="services" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-800 font-medium text-sm mb-4">
+          <span className="inline-block px-4 py-1 rounded-full bg-blue-50 text-blue-600 font-medium text-sm mb-4 border border-blue-100">
             Our Expertise
           </span>
           <h2 className="text-4xl font-bold mb-6 text-gray-900">
@@ -233,7 +93,7 @@ const ServicesSection = () => {
           </h2>
           <p className="text-lg text-gray-600 mb-8">
             We offer end-to-end technology solutions designed to help your business 
-            grow and succeed in today&rsquo;s digital landscape.
+            grow and succeed in today's digital landscape.
           </p>
         </div>
         
@@ -241,25 +101,25 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="relative bg-white rounded-2xl shadow-lg transition-all duration-300 group"
+              className="relative bg-white rounded-2xl border-2 border-gray-100 hover:border-blue-200 transition-all duration-300 group overflow-hidden"
               style={{
-                transform: hoveredIndex === index ? 'translateY(-10px)' : 'translateY(0)',
-                boxShadow: hoveredIndex === index ? '0 20px 30px -10px rgba(0, 0, 0, 0.1)' : '0 10px 20px -5px rgba(0, 0, 0, 0.05)'
+                transform: hoveredIndex === index ? 'translateY(-8px)' : 'translateY(0)',
+                boxShadow: hoveredIndex === index ? '0 20px 40px -10px rgba(59, 130, 246, 0.1)' : '0 4px 6px -1px rgba(0, 0, 0, 0.05)'
               }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <div className="h-full flex flex-col">
-                {/* Colored top bar */}
-                <div className={`h-2 w-full bg-gradient-to-r ${service.color} rounded-t-2xl`}></div>
+                <div className={`h-1 w-full bg-gradient-to-r ${service.color}`}></div>
               
                 <div className="p-8 flex-grow">
-                  {/* Icon with gradient background */}
-                  <div className={`w-16 h-16 ${service.bgLight} rounded-lg flex items-center justify-center mb-6`}>
-                    {service.icon}
+                  <div className={`w-16 h-16 ${service.bgLight} rounded-xl flex items-center justify-center mb-6 transition-transform duration-300 ${hoveredIndex === index ? 'scale-110' : 'scale-100'}`}>
+                    <div className={service.iconColor}>
+                      {service.icon}
+                    </div>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-gray-800 mb-4">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
                     {service.title}
                   </h3>
                   
@@ -267,291 +127,27 @@ const ServicesSection = () => {
                     {service.description}
                   </p>
                   
-                  <button 
-                    onClick={() => openModal(index)}
-                    className="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 transition-colors mt-auto group-hover:underline"
+                  <a 
+                    href={service.link}
+                    className="inline-flex items-center font-semibold text-blue-600 hover:text-blue-700 transition-colors mt-auto group"
                   >
                     Learn more
-                    <FaArrowRight size={14} className="ml-2 transition-transform group-hover:translate-x-1" />
-                  </button>
+                    <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+                  </a>
                 </div>
               </div>
             </div>
           ))}
         </div>
         
-        {/* Modal Overlay */}
-        {activeModal !== null && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto">
-              {/* Modal Header */}
-              <div className={`p-6 bg-gradient-to-r ${services[activeModal].color} rounded-t-2xl flex justify-between items-center`}>
-                <div className="flex items-center">
-                  <div className="bg-white bg-opacity-20 p-3 rounded-lg mr-4">
-                    <div className="text-white">
-                      {services[activeModal].icon}
-                    </div>
-                  </div>
-                  <h3 className="text-2xl font-bold text-white">{services[activeModal].title}</h3>
-                </div>
-                <button 
-                  onClick={closeModal}
-                  className="text-white hover:text-gray-200 transition-colors"
-                >
-                  <FaTimes size={24} />
-                </button>
-              </div>
-              
-              {/* Modal Content */}
-              <div className="p-8">
-                <p className="text-lg text-gray-700 mb-6">
-                  {services[activeModal].details.fullDescription}
-                </p>
-                
-                <div className="mb-8">
-                  <h4 className="text-xl font-semibold text-gray-800 mb-4">What We Offer</h4>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {services[activeModal].details.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <span className={`mt-1 mr-2 text-xs ${services[activeModal].bgLight} p-1 rounded-full`}>
-                          {activeModal === 0 && <FaArrowRight size={10} className="text-blue-600" />}
-                          {activeModal === 1 && <FaArrowRight size={10} className="text-cyan-600" />}
-                          {activeModal === 2 && <FaArrowRight size={10} className="text-purple-600" />}
-                          {activeModal === 3 && <FaArrowRight size={10} className="text-emerald-600" />}
-                          {activeModal === 4 && <FaArrowRight size={10} className="text-red-600" />}
-                          {activeModal === 5 && <FaArrowRight size={10} className="text-sky-600" />}
-                          {activeModal === 6 && <FaArrowRight size={10} className="text-amber-600" />}
-                        </span>
-                        <span className='text-gray-800'>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                
-                <div className="mb-8">
-                  <h4 className="text-xl font-semibold text-gray-800 mb-4">Benefits</h4>
-                  <p className="text-gray-700">
-                    {services[activeModal].details.benefits}
-                  </p>
-                </div>
-                
-                <div className="mb-8">
-                  <h4 className="text-xl font-semibold text-gray-800 mb-4">Our Approach</h4>
-                  <p className="text-gray-700">
-                    {services[activeModal].details.process}
-                  </p>
-                </div>
-                
-                <div className="mt-8 flex justify-end">
-                  <button 
-                    className={`px-6 py-3 rounded-lg bg-gradient-to-r ${services[activeModal].color} text-white font-medium hover:opacity-90 transition-opacity`}
-                  >
-                    Request Service
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-        
-        {/* CTA Section */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white mb-8">
-            <h3 className="text-2xl font-bold mb-4">Ready to See Our Work in Action?</h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Request a personalized demo of our services. We&apos;ll show you exactly how our solutions 
-              can benefit your business with real examples and case studies.
-            </p>
-            <button 
-              onClick={openDemoForm}
-              className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors inline-flex items-center"
-            >
-              <FaEnvelope className="mr-2" />
-              Request Free Demo
-            </button>
-          </div>
-          
-          <div className="inline-flex items-center justify-center p-1 rounded-full bg-gradient-to-r from-blue-600 to-blue-800">
-            <a href="#contact" className="px-6 py-3 rounded-full bg-white hover:bg-opacity-90 text-blue-700 font-medium transition-all">
-              Get a free consultation
-            </a>
-          </div>
+        <div className="mt-20 text-center">
+          <a 
+            href="#contact" 
+            className="inline-block px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl transition-all hover:bg-blue-700 shadow-lg shadow-blue-600/20"
+          >
+            Get a free consultation
+          </a>
         </div>
-
-        {/* Demo Request Form Modal */}
-        {showDemoForm && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
-              {!formSubmitted ? (
-                <>
-                  {/* Form Header */}
-                  <div className="p-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-t-2xl flex justify-between items-center">
-                    <div>
-                      <h3 className="text-2xl font-bold text-white">Request a Demo</h3>
-                      <p className="text-blue-100">Tell us about your project and we&apos;ll prepare a personalized demo</p>
-                    </div>
-                    <button 
-                      onClick={closeDemoForm}
-                      className="text-white hover:text-gray-200 transition-colors"
-                    >
-                      <FaTimes size={24} />
-                    </button>
-                  </div>
-                  
-                  {/* Form Content */}
-                  <form onSubmit={handleSubmit} className="p-8">
-                    {/* Personal Information */}
-                    <div className="grid md:grid-cols-2 gap-6 mb-6">
-                      <div>
-                        <label className="block text-gray-700 font-medium mb-2">
-                          <FaUser className="inline mr-2 text-blue-500" />
-                          Full Name *
-                        </label>
-                        <input
-                          type="text"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
-                          placeholder="Your full name"
-                        />
-                      </div>
-                      
-                      <div>
-                        <label className="block text-gray-700 font-medium mb-2">
-                          <FaEnvelope className="inline mr-2 text-blue-500" />
-                          Email Address *
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
-                          placeholder="your@email.com"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6 mb-6">
-                      <div>
-                        <label className="block text-gray-700 font-medium mb-2">
-                          <FaPhone className="inline mr-2 text-blue-500" />
-                          Phone Number
-                        </label>
-                        <input
-                          type="tel"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
-                          placeholder="(555) 123-4567"
-                        />
-                      </div>
-                      
-                      <div>
-                        <label className="block text-gray-700 font-medium mb-2">
-                          <FaBuilding className="inline mr-2 text-blue-500" />
-                          Company Name
-                        </label>
-                        <input
-                          type="text"
-                          name="company"
-                          value={formData.company}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
-                          placeholder="Your company name"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Services Selection */}
-                    <div className="mb-6">
-                      <label className="block text-gray-700 font-medium mb-4">
-                        Services You&apos;re Interested In *
-                      </label>
-                      <div className="grid md:grid-cols-2 gap-3">
-                        {services.map((service, index) => (
-                          <label key={index} className="flex items-center cursor-pointer">
-                            <input
-                              type="checkbox"
-                              checked={formData.services.includes(service.title)}
-                              onChange={() => handleServiceToggle(service.title)}
-                              className="sr-only"
-                            />
-                            <div className={`flex items-center p-3 border-2 rounded-lg transition-all ${
-                              formData.services.includes(service.title)
-                                ? 'border-blue-500 bg-blue-50'
-                                : 'border-gray-200 hover:border-gray-300'
-                            }`}>
-                              <div className={`w-8 h-8 ${service.bgLight} rounded-lg flex items-center justify-center mr-3 flex-shrink-0`}>
-                                <div className="text-blue-600">
-                                  {service.title === 'WordPress Development' && <FaWordpress size={16} />}
-                                  {service.title === 'Next.js Applications' && <FaReact size={16} />}
-                                  {service.title === 'Custom Software Development' && <FaCode size={16} />}
-                                  {service.title === 'Digital Marketing' && <FaBullhorn size={16} />}
-                                  {service.title === 'AI-Powered Solutions' && <FaRobot size={16} />}
-                                  {service.title === 'Search Engine Optimization' && <FaSearch size={16} />}
-                                </div>
-                              </div>
-                              <span className="text-sm font-medium text-gray-800">{service.title}</span>
-                              {formData.services.includes(service.title) && (
-                                <FaCheckCircle className="ml-auto text-blue-500" size={16} />
-                              )}
-                            </div>
-                          </label>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Project Details */}
-                    <div className="mb-6">
-                      <label className="block text-gray-700 font-medium mb-2">
-                        Project Details & Requirements
-                      </label>
-                      <textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        rows="4"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
-                        placeholder="Tell us about your project, timeline, budget, and any specific requirements..."
-                      ></textarea>
-                    </div>
-
-                    {/* Submit Button */}
-                    <div className="flex justify-end">
-                      <button
-                        type="submit"
-                        disabled={formData.services.length === 0}
-                        className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
-                      >
-                        Submit Demo Request
-                      </button>
-                    </div>
-                  </form>
-                </>
-              ) : (
-                /* Success Message */
-                <div className="p-12 text-center">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <FaCheckCircle className="text-green-500" size={32} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Demo Request Submitted!</h3>
-                  <p className="text-gray-600 mb-4">
-                    Thank you for your interest! We&apos;ll review your requirements and send you a 
-                    personalized demo within 24 hours.
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    This window will close automatically in a few seconds...
-                  </p>
-                </div>
-              )}
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );

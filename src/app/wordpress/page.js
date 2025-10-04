@@ -24,6 +24,7 @@ import {
   FaUser,
   FaProjectDiagram
 } from 'react-icons/fa';
+import Navbar from '../components/Navbar';
 
 const WordPressServicePage = () => {
   const [activeTab, setActiveTab] = useState('features');
@@ -186,6 +187,7 @@ const WordPressServicePage = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Navbar/>
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 via-white to-blue-100 py-20">
         <div className="container mx-auto px-6">

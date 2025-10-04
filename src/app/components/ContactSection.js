@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPhone, faLocationDot, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faInstagram, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { Mail, Phone, MapPin, Send, Facebook, Instagram, Linkedin, Twitter, CheckCircle } from 'lucide-react';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -26,7 +24,6 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setFormSubmitted(true);
@@ -37,7 +34,6 @@ const ContactSection = () => {
         message: ''
       });
       
-      // Reset success message after a delay
       setTimeout(() => {
         setFormSubmitted(false);
       }, 5000);
@@ -45,94 +41,94 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-gray-50 to-gray-100">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-24 bg-white">
+      <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-800 font-medium text-sm mb-4">
+          <span className="inline-block px-4 py-1 rounded-full bg-blue-50 text-blue-600 font-medium text-sm mb-4 border border-blue-100">
             Get In Touch
           </span>
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Let&#39;s Start a Conversation</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Let's Start a Conversation</h2>
           <p className="text-lg text-gray-600">
-            Have a project in mind or want to learn more about our IT &amp; AI services? Connect with us and let&#39;s build something great together.
+            Have a project in mind or want to learn more about our IT & AI services? Connect with us and let's build something great together.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Contact Information Column */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-2xl shadow-lg p-8 h-full">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+            <div className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100 rounded-2xl p-8 h-full">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8">Contact Information</h3>
               
               <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                    <FontAwesomeIcon icon={faEnvelope} className="text-blue-600" />
+                <div className="flex items-start group">
+                  <div className="bg-blue-600 p-3 rounded-xl mr-4 group-hover:scale-110 transition-transform">
+                    <Mail className="text-white" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-800 mb-1">Email</h4>
-                    <a href="mailto:radth.co@gmail.com" className="text-blue-600 hover:underline">
+                    <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
+                    <a href="mailto:radth.co@gmail.com" className="text-blue-600 hover:text-blue-700 transition-colors">
                       radth.co@gmail.com
                     </a>
                   </div>
                 </div>
                 
-                <div className="flex items-start">
-                  <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                    <FontAwesomeIcon icon={faPhone} className="text-blue-600" />
+                <div className="flex items-start group">
+                  <div className="bg-blue-600 p-3 rounded-xl mr-4 group-hover:scale-110 transition-transform">
+                    <Phone className="text-white" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-800 mb-1">Phone</h4>
-                    <a href="tel:+13476696071" className="text-blue-600 hover:underline">
+                    <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
+                    <a href="tel:+13476696071" className="text-blue-600 hover:text-blue-700 transition-colors">
                       +1 (347) 669-6071
                     </a>
                   </div>
                 </div>
                 
-                <div className="flex items-start">
-                  <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                    <FontAwesomeIcon icon={faLocationDot} className="text-blue-600" />
+                <div className="flex items-start group">
+                  <div className="bg-blue-600 p-3 rounded-xl mr-4 group-hover:scale-110 transition-transform">
+                    <MapPin className="text-white" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-800 mb-1">Location</h4>
+                    <h4 className="font-semibold text-gray-900 mb-1">Location</h4>
                     <p className="text-gray-600">New York, NY</p>
                   </div>
                 </div>
               </div>
               
-              <div className="mt-10">
-                <h4 className="font-medium text-gray-800 mb-4">Follow Us</h4>
-                <div className="flex space-x-4">
+              <div className="mt-10 pt-8 border-t border-blue-100">
+                <h4 className="font-semibold text-gray-900 mb-4">Follow Us</h4>
+                <div className="flex space-x-3">
                   <a 
                     href="https://www.facebook.com/radthbd" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-gray-100 hover:bg-blue-100 text-gray-600 hover:text-blue-600 p-3 rounded-full transition-colors"
+                    className="bg-white border-2 border-gray-200 hover:border-blue-600 hover:bg-blue-50 text-gray-600 hover:text-blue-600 w-12 h-12 flex items-center justify-center rounded-xl transition-all"
                   >
-                    <FontAwesomeIcon icon={faFacebook} />
+                    <Facebook size={20} />
                   </a>
                   <a 
                     href="https://www.instagram.com/radthbd" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-gray-100 hover:bg-blue-100 text-gray-600 hover:text-blue-600 p-3 rounded-full transition-colors"
+                    className="bg-white border-2 border-gray-200 hover:border-blue-600 hover:bg-blue-50 text-gray-600 hover:text-blue-600 w-12 h-12 flex items-center justify-center rounded-xl transition-all"
                   >
-                    <FontAwesomeIcon icon={faInstagram} />
+                    <Instagram size={20} />
                   </a>
                   <a 
                     href="https://www.linkedin.com/company/radth" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-gray-100 hover:bg-blue-100 text-gray-600 hover:text-blue-600 p-3 rounded-full transition-colors"
+                    className="bg-white border-2 border-gray-200 hover:border-blue-600 hover:bg-blue-50 text-gray-600 hover:text-blue-600 w-12 h-12 flex items-center justify-center rounded-xl transition-all"
                   >
-                    <FontAwesomeIcon icon={faLinkedin} />
+                    <Linkedin size={20} />
                   </a>
                   <a 
                     href="https://twitter.com/radthbd" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-gray-100 hover:bg-blue-100 text-gray-600 hover:text-blue-600 p-3 rounded-full transition-colors"
+                    className="bg-white border-2 border-gray-200 hover:border-blue-600 hover:bg-blue-50 text-gray-600 hover:text-blue-600 w-12 h-12 flex items-center justify-center rounded-xl transition-all"
                   >
-                    <FontAwesomeIcon icon={faTwitter} />
+                    <Twitter size={20} />
                   </a>
                 </div>
               </div>
@@ -141,22 +137,23 @@ const ContactSection = () => {
 
           {/* Contact Form Column */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl shadow-lg p-8">
+            <div className="bg-white border-2 border-gray-100 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a message</h3>
               
               {formSubmitted ? (
-                <div className="bg-green-50 border border-green-200 text-green-700 rounded-lg p-4 flex items-center mb-6">
-                  <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span>Your message has been sent successfully! We&#39;ll get back to you soon.</span>
+                <div className="bg-green-50 border-2 border-green-200 text-green-700 rounded-xl p-6 flex items-start mb-6">
+                  <CheckCircle className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-semibold mb-1">Message Sent Successfully!</h4>
+                    <p className="text-sm">We'll get back to you soon.</p>
+                  </div>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                        Your Name
+                      <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
+                        Your Name *
                       </label>
                       <input
                         type="text"
@@ -164,13 +161,14 @@ const ContactSection = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-gray-800"
+                        className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:outline-none transition text-gray-900"
+                        placeholder="John Doe"
                         required
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1 ">
-                        Your Email
+                      <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
+                        Your Email *
                       </label>
                       <input
                         type="email"
@@ -178,15 +176,16 @@ const ContactSection = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-gray-800"
+                        className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:outline-none transition text-gray-900"
+                        placeholder="john@example.com"
                         required
                       />
                     </div>
                   </div>
                   
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                      Subject
+                    <label htmlFor="subject" className="block text-sm font-semibold text-gray-900 mb-2">
+                      Subject *
                     </label>
                     <input
                       type="text"
@@ -194,49 +193,48 @@ const ContactSection = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-gray-800"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:outline-none transition text-gray-900"
+                      placeholder="How can we help you?"
                       required
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                      Your Message
+                    <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-2">
+                      Your Message *
                     </label>
                     <textarea
                       id="message"
                       name="message"
-                      rows="5"
+                      rows={5}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-gray-800"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:outline-none transition text-gray-900 resize-none"
+                      placeholder="Tell us about your project..."
                       required
                     ></textarea>
                   </div>
                   
                   <button
-                    type="submit"
+                    onClick={handleSubmit}
                     disabled={isSubmitting}
-                    className={`w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium py-3 px-6 rounded-lg shadow-md hover:from-blue-700 hover:to-blue-800 transition-all flex items-center justify-center ${
+                    className={`w-full bg-blue-600 text-white font-semibold py-4 px-6 rounded-xl hover:bg-blue-700 transition-all flex items-center justify-center shadow-lg shadow-blue-600/20 ${
                       isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
                     }`}
                   >
                     {isSubmitting ? (
                       <>
-                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-3"></div>
                         Sending...
                       </>
                     ) : (
                       <>
                         Send Message
-                        <FontAwesomeIcon icon={faPaperPlane} className="ml-2" />
+                        <Send className="ml-2" size={18} />
                       </>
                     )}
                   </button>
-                </form>
+                </div>
               )}
             </div>
           </div>
