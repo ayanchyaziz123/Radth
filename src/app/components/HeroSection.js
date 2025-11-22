@@ -21,7 +21,7 @@ const HeroSection = () => {
           {/* Left column: Text content */}
           <div className={`transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
             <div className="inline-block px-4 py-1 rounded-full bg-blue-50 text-blue-600 font-medium text-sm mb-6 border border-blue-100">
-              Next-Generation IT & AI Solutions
+              RadTH IT & AI Solutions
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
               Transform Your Business with{' '}
@@ -56,7 +56,7 @@ const HeroSection = () => {
             <div className="mt-12 pt-8 border-t border-gray-200">
               <p className="text-sm text-gray-500 mb-4">Trusted by innovative companies</p>
               <div className="flex flex-wrap gap-6 items-center opacity-70">
-                {['Google', 'Amazon', 'Facebook', 'OpenAI'].map((company, index) => (
+                {['Flames'].map((company, index) => (
                   <div key={index} className="text-sm font-bold tracking-wide text-gray-600">
                     {company}
                   </div>
