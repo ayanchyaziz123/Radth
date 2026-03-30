@@ -1,24 +1,39 @@
-import { useState } from 'react';
+'use client';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
-    { name: 'Services', href: '#services' },
+    { name: 'AI Agents', href: '#services' },
     { name: 'About', href: '#about' },
-    { name: 'Blog', href: '#blog' },
     { name: 'Contact', href: '#contact' },
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white shadow-md">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      scrolled ? 'bg-[#0A0A1A]/95 backdrop-blur-md shadow-lg shadow-purple-900/10' : 'bg-transparent'
+    }`}>
+      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+        {/* Logo */}
         <a href="/" className="flex items-center space-x-2">
-          <img src="/images/logo-light.png" alt="Logo" className="h-8 w-auto rounded-sm" />
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 rounded-lg ai-gradient flex items-center justify-center">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <span className="text-white font-bold text-xl tracking-tight">
+              Radth<span className="ai-gradient-text"> AI</span>
+            </span>
+          </div>
         </a>
 
         {/* Desktop Navigation */}
@@ -27,29 +42,26 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-base font-medium text-gray-800 hover:text-blue-600 transition-colors duration-300"
+              className="text-gray-300 hover:text-white text-sm font-medium transition-colors duration-200"
             >
               {link.name}
             </a>
           ))}
-
-          <button className="px-5 py-2 rounded-md text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300">
+          <a
+            href="#contact"
+            className="px-5 py-2.5 rounded-lg text-sm font-semibold bg-gradient-to-r from-violet-600 to-indigo-600 text-white hover:from-violet-500 hover:to-indigo-500 transition-all duration-200 shadow-lg shadow-violet-500/25"
+          >
             Get Started
-          </button>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
         <button
           className="md:hidden focus:outline-none"
-          onClick={toggleMenu}
+          onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
-          <svg
-            className="w-6 h-6 text-gray-900"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
+          <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             {isOpen ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
@@ -61,26 +73,25 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow-lg">
-          <div className="px-4 pt-4 pb-6 space-y-4">
+        <div className="md:hidden bg-[#0D0D20] border-t border-white/10">
+          <div className="px-6 py-6 space-y-4">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="block py-2 px-2 text-base font-medium text-gray-800 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-300"
+                className="block py-2 text-gray-300 hover:text-white font-medium transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
               </a>
             ))}
-            <div className="pt-2">
-              <a
-                href="#contact"
-                className="w-full px-5 py-3 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition-colors duration-300 block text-center"
-              >
-                Get Started
-              </a>
-            </div>
+            <a
+              href="#contact"
+              className="block w-full text-center px-5 py-3 bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-lg font-semibold hover:from-violet-500 hover:to-indigo-500 transition-all"
+              onClick={() => setIsOpen(false)}
+            >
+              Get Started
+            </a>
           </div>
         </div>
       )}
