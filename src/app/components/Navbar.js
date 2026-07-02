@@ -12,27 +12,28 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'AI Agents', href: '#services' },
-    { name: 'About', href: '#about' },
+    { name: 'Solutions', href: '#services' },
+    { name: 'Technology', href: '#about' },
+    { name: 'Research', href: '#research' },
     { name: 'Contact', href: '#contact' },
   ];
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-[#0A0A1A]/95 backdrop-blur-md shadow-lg shadow-purple-900/10' : 'bg-transparent'
-    }`}>
+      scrolled ? 'backdrop-blur-md shadow-lg' : 'bg-transparent'
+    }`} style={scrolled ? { background: 'rgba(8,20,40,0.95)' } : {}}>
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <a href="/" className="flex items-center space-x-2">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-lg ai-gradient flex items-center justify-center">
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <span className="text-white font-bold text-xl tracking-tight">
-              Radth<span className="ai-gradient-text"> AI</span>
-            </span>
+        <a href="/" className="flex items-center space-x-3">
+          <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #0ea5e9, #059669)' }}>
+            {/* Brain/scan icon */}
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" />
+            </svg>
+          </div>
+          <div>
+            <span className="text-white font-bold text-xl tracking-tight">Radth</span>
+            <span className="text-xs font-medium ml-1.5 px-1.5 py-0.5 rounded" style={{ background: 'rgba(14,165,233,0.15)', color: '#38bdf8' }}>Medical AI</span>
           </div>
         </a>
 
@@ -42,55 +43,45 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-gray-300 hover:text-white text-sm font-medium transition-colors duration-200"
+              className="text-sm font-medium transition-colors duration-200"
+              style={{ color: '#94a3b8' }}
+              onMouseEnter={e => e.target.style.color = '#e2e8f0'}
+              onMouseLeave={e => e.target.style.color = '#94a3b8'}
             >
               {link.name}
             </a>
           ))}
           <a
             href="#contact"
-            className="px-5 py-2.5 rounded-lg text-sm font-semibold bg-gradient-to-r from-violet-600 to-indigo-600 text-white hover:from-violet-500 hover:to-indigo-500 transition-all duration-200 shadow-lg shadow-violet-500/25"
+            className="px-5 py-2.5 rounded-lg text-sm font-semibold text-white transition-all duration-200"
+            style={{ background: 'linear-gradient(135deg, #0ea5e9, #059669)', boxShadow: '0 4px 15px rgba(14,165,233,0.3)' }}
           >
-            Get Started
+            Request Demo
           </a>
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden focus:outline-none"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
+        <button className="md:hidden focus:outline-none" onClick={() => setIsOpen(!isOpen)}>
           <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            {isOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            )}
+            {isOpen
+              ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            }
           </svg>
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#0D0D20] border-t border-white/10">
+        <div style={{ background: '#081428', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
           <div className="px-6 py-6 space-y-4">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="block py-2 text-gray-300 hover:text-white font-medium transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
+              <a key={link.name} href={link.href} className="block py-2 font-medium transition-colors" style={{ color: '#94a3b8' }} onClick={() => setIsOpen(false)}>
                 {link.name}
               </a>
             ))}
-            <a
-              href="#contact"
-              className="block w-full text-center px-5 py-3 bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-lg font-semibold hover:from-violet-500 hover:to-indigo-500 transition-all"
-              onClick={() => setIsOpen(false)}
-            >
-              Get Started
+            <a href="#contact" className="block w-full text-center px-5 py-3 text-white rounded-lg font-semibold transition-all" style={{ background: 'linear-gradient(135deg, #0ea5e9, #059669)' }} onClick={() => setIsOpen(false)}>
+              Request Demo
             </a>
           </div>
         </div>
