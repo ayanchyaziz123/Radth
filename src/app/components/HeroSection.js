@@ -6,10 +6,10 @@ const HeroSection = () => {
   const [activeScan, setActiveScan] = useState(0);
 
   const scans = [
-    { label: 'GI Endoscopy', icon: '🔬', result: 'Pre-malignant · Biopsy required', confidence: '94.2%', risk: 'medium' },
-    { label: 'Chest X-Ray', icon: '🫁', result: 'Normal · Routine follow-up', confidence: '98.7%', risk: 'low' },
-    { label: 'Skin Lesion', icon: '🧬', result: 'High-Risk · Immediate referral', confidence: '91.5%', risk: 'high' },
-    { label: 'Retinal Scan', icon: '👁️', result: 'Diabetic Retinopathy · Stage 2', confidence: '96.1%', risk: 'medium' },
+    { label: 'NPC Behavior AI', icon: '🎮', result: 'Trained · Ready to ship', confidence: '96.4%', risk: 'low' },
+    { label: 'Procedural Generation', icon: '🗺️', result: 'Level built · Balanced', confidence: '94.8%', risk: 'low' },
+    { label: 'Business Automation', icon: '⚙️', result: 'Deployed · Live in prod', confidence: '98.1%', risk: 'low' },
+    { label: 'Player Analytics', icon: '📈', result: 'Churn risk · Segment flagged', confidence: '92.7%', risk: 'medium' },
   ];
 
   const riskColor = { low: '#34d399', medium: '#fbbf24', high: '#f87171' };
@@ -37,21 +37,21 @@ const HeroSection = () => {
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-8" style={{ background: 'rgba(14,165,233,0.08)', border: '1px solid rgba(14,165,233,0.2)', color: '#7dd3fc' }}>
               <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#38bdf8' }} />
-              Deep Learning · CNN · Vision Transformers · GradCAM
+              AI Software · Game Engines · Automation
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 text-white">
-              Medical Imaging{' '}
+              AI Software{' '}
               <span style={{ background: 'linear-gradient(90deg, #38bdf8 0%, #34d399 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                AI
+                & Game
               </span>{' '}
-              That Saves Lives
+              Development
             </h1>
 
             <p className="text-lg mb-10 max-w-xl leading-relaxed" style={{ color: '#94a3b8' }}>
-              Radth builds lightweight CNN and Vision Transformer models that classify,
-              triage, and risk-stratify medical images — from GI endoscopy to radiology,
-              pathology, and beyond. Deployable on clinical hardware. Explainable by design.
+              Radth builds intelligent AI software and immersive games — from custom
+              machine learning pipelines and automation tools to full game production
+              across Unity, Unreal, and Godot. Shipped fast. Built to scale.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-14">
@@ -69,10 +69,10 @@ const HeroSection = () => {
             {/* Stats */}
             <div className="grid grid-cols-4 gap-4">
               {[
-                { value: '<8M', label: 'Parameters' },
-                { value: '0', label: 'Missed High-Risk' },
-                { value: '98%+', label: 'AUC-ROC' },
-                { value: 'HIPAA', label: 'Compliant' },
+                { value: '30+', label: 'Projects Shipped' },
+                { value: '99.9%', label: 'Uptime' },
+                { value: '3', label: 'Game Engines' },
+                { value: '24/7', label: 'Support' },
               ].map((s, i) => (
                 <div key={i} className="text-center p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
                   <div className="text-xl font-bold" style={{ background: 'linear-gradient(90deg,#38bdf8,#34d399)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{s.value}</div>
@@ -82,7 +82,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right: Live scan dashboard */}
+          {/* Right: Live dashboard */}
           <div className={`hidden md:block transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
             <div className="relative">
               <div className="rounded-2xl p-6" style={{ background: '#0a1a2e', border: '1px solid rgba(56,189,248,0.12)', boxShadow: '0 0 60px rgba(14,165,233,0.1)' }}>
@@ -95,14 +95,14 @@ const HeroSection = () => {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-white font-bold text-sm">Radth Vision AI</p>
-                      <p className="text-xs" style={{ color: '#475569' }}>Live inference · 4 modalities</p>
+                      <p className="text-white font-bold text-sm">Radth Build Pipeline</p>
+                      <p className="text-xs" style={{ color: '#475569' }}>Live status · 4 systems</p>
                     </div>
                   </div>
                   <span className="text-xs px-2 py-1 rounded-full font-medium" style={{ background: 'rgba(52,211,153,0.1)', color: '#34d399', border: '1px solid rgba(52,211,153,0.2)' }}>● Live</span>
                 </div>
 
-                {/* Scan cards */}
+                {/* Cards */}
                 <div className="space-y-3 mb-5">
                   {scans.map((scan, i) => (
                     <div key={i} className="flex items-center gap-4 p-3 rounded-xl transition-all duration-500" style={{
@@ -122,16 +122,16 @@ const HeroSection = () => {
                   ))}
                 </div>
 
-                {/* GradCAM visualization hint */}
+                {/* Build breakdown visualization */}
                 <div className="rounded-xl p-4" style={{ background: 'rgba(0,0,0,0.3)' }}>
                   <div className="flex items-center justify-between mb-3">
-                    <p className="text-xs font-medium uppercase tracking-wider" style={{ color: '#475569' }}>GradCAM Explainability</p>
+                    <p className="text-xs font-medium uppercase tracking-wider" style={{ color: '#475569' }}>Pipeline Breakdown</p>
                     <span className="text-xs" style={{ color: '#38bdf8' }}>Active</span>
                   </div>
                   <div className="grid grid-cols-4 gap-2">
-                    {['Normal', 'Inflam.', 'Pre-mal.', 'High-Risk'].map((cls, i) => {
+                    {['Design', 'AI/ML', 'Gameplay', 'Ship'].map((cls, i) => {
                       const colors = ['#34d399', '#60a5fa', '#fbbf24', '#f87171'];
-                      const heights = [20, 45, 70, 95];
+                      const heights = [40, 70, 55, 95];
                       return (
                         <div key={i} className="text-center">
                           <div className="w-full rounded mb-1" style={{ height: `${heights[i]}%`, minHeight: '8px', background: colors[i], opacity: activeScan === i ? 1 : 0.3, transition: 'opacity 0.5s' }} />
@@ -145,20 +145,20 @@ const HeroSection = () => {
 
               {/* Floating badge */}
               <div className="absolute -top-4 -right-4 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg" style={{ background: 'linear-gradient(135deg,#0ea5e9,#059669)' }}>
-                Explainable AI
+                Full-Stack AI
               </div>
 
               {/* Bottom card */}
               <div className="absolute -bottom-5 -left-5 rounded-xl p-4 shadow-xl" style={{ background: '#0a1a2e', border: '1px solid rgba(255,255,255,0.08)' }}>
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'rgba(248,113,113,0.15)' }}>
-                    <svg className="w-4 h-4" style={{ color: '#f87171' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'rgba(52,211,153,0.15)' }}>
+                    <svg className="w-4 h-4" style={{ color: '#34d399' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
                   <div>
-                    <p className="text-white text-xs font-bold">Zero Missed High-Risk</p>
-                    <p className="text-xs" style={{ color: '#475569' }}>MC Dropout safety protocol</p>
+                    <p className="text-white text-xs font-bold">Shipped On Time</p>
+                    <p className="text-xs" style={{ color: '#475569' }}>Every sprint, every release</p>
                   </div>
                 </div>
               </div>

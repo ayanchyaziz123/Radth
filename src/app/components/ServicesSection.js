@@ -3,140 +3,140 @@ import { useState } from 'react';
 
 const services = [
   {
-    title: 'GI Endoscopy AI',
-    emoji: '🔬',
+    title: 'Custom AI Software',
+    emoji: '🧠',
     tag: 'Flagship',
     tagColor: { bg: 'rgba(14,165,233,0.12)', text: '#38bdf8', border: 'rgba(14,165,233,0.25)' },
     gradient: 'linear-gradient(135deg,#0ea5e9,#0284c7)',
-    description: 'Four-class risk stratification from gastrointestinal endoscopy images — Normal, Inflammatory, Pre-malignant, High-Risk — aligned with ACG/ESGE clinical guidelines.',
-    tech: ['DenseNet-121', 'EfficientNet-B0', 'DeiT-Tiny', 'AEL Loss', 'GradCAM'],
-    metrics: [{ label: 'Macro F1', value: '0.83' }, { label: 'AUC-ROC', value: '0.98' }, { label: 'Missed HR', value: '0' }],
+    description: 'End-to-end AI product development — from data pipelines and model training to production APIs that plug straight into your business.',
+    tech: ['PyTorch', 'TensorFlow', 'LLM Agents', 'FastAPI', 'MLOps'],
+    metrics: [{ label: 'Delivery', value: '4-8 wks' }, { label: 'Uptime', value: '99.9%' }, { label: 'Support', value: '12 mo' }],
     details: {
-      overview: 'Our flagship model maps 23 HyperKvasir classes to four ACG/ESGE-aligned risk tiers. Three lightweight architectures (<8M params) trained under our novel Asymmetric Endoscopy Loss (AEL) with a 5× High-Risk penalty.',
+      overview: 'We design and ship custom AI systems — recommendation engines, LLM-powered agents, computer vision pipelines, and predictive models — built for real production traffic, not demos.',
       capabilities: [
-        'Four-class risk stratification (Normal → High-Risk)',
-        'Asymmetric Endoscopy Loss (AEL) — 5× High-Risk penalty',
-        'GradCAM heatmaps per risk tier for clinician review',
-        'Monte Carlo Dropout uncertainty quantification',
-        'Zero missed High-Risk lesions under referral protocol',
-        '43.9% automated case clearance (workload reduction)',
-        'Zero-shot cross-dataset generalisation (Kvasir-v2)',
-        'HIPAA-compliant inference pipeline',
+        'Custom model training and fine-tuning',
+        'LLM agent and RAG pipeline development',
+        'Computer vision and NLP pipelines',
+        'Production-grade inference APIs',
+        'MLOps: monitoring, retraining, versioning',
+        'Cloud deployment (AWS / GCP / Azure)',
+        'Data pipeline and ETL engineering',
+        'Model evaluation and A/B testing',
       ],
     }
   },
   {
-    title: 'Chest Radiology AI',
-    emoji: '🫁',
+    title: 'Business Automation AI',
+    emoji: '⚙️',
     tag: 'Available',
     tagColor: { bg: 'rgba(52,211,153,0.12)', text: '#34d399', border: 'rgba(52,211,153,0.25)' },
     gradient: 'linear-gradient(135deg,#059669,#0d9488)',
-    description: 'CNN-based analysis of chest X-rays and CT scans for pneumonia, nodule detection, pleural effusion, and COVID-19 screening with radiologist-level accuracy.',
-    tech: ['ResNet-50', 'EfficientNet', 'Grad-CAM++', 'Ensemble'],
-    metrics: [{ label: 'Sensitivity', value: '96%' }, { label: 'Specificity', value: '94%' }, { label: 'AUC', value: '0.97' }],
+    description: 'AI agents and automation tools that handle repetitive operations — support, scheduling, data entry, and reporting — around the clock.',
+    tech: ['AI Agents', 'Workflow Automation', 'APIs', 'Integrations'],
+    metrics: [{ label: 'Time Saved', value: '60%+' }, { label: 'Response', value: '<1s' }, { label: 'Uptime', value: '24/7' }],
     details: {
-      overview: 'Lightweight CNN models trained on CheXpert and NIH ChestX-ray14 datasets. Real-time inference with attention maps highlighting pathological regions for radiologist confirmation.',
+      overview: 'We automate the repetitive parts of your operation with AI agents that integrate directly into your existing tools — CRMs, helpdesks, spreadsheets, and internal dashboards.',
       capabilities: [
-        'Multi-label pathology detection (14 conditions)',
-        'Pneumonia and COVID-19 screening',
-        'Pulmonary nodule detection and sizing',
-        'Pleural effusion grading',
-        'GradCAM++ attention maps per pathology',
-        'Confidence scoring with uncertainty bounds',
-        'DICOM-native input pipeline',
-        'HL7 FHIR integration ready',
+        'Customer support and chat agents',
+        'Workflow and task automation',
+        'Document processing and data extraction',
+        'CRM and third-party API integrations',
+        'Automated reporting and analytics dashboards',
+        'Scheduling and operations bots',
+        'Custom internal tooling',
+        'Ongoing monitoring and iteration',
       ],
     }
   },
   {
-    title: 'Digital Pathology AI',
-    emoji: '🧫',
-    tag: 'Available',
+    title: 'Game Development',
+    emoji: '🎮',
+    tag: 'Flagship',
     tagColor: { bg: 'rgba(251,191,36,0.12)', text: '#fbbf24', border: 'rgba(251,191,36,0.25)' },
     gradient: 'linear-gradient(135deg,#d97706,#b45309)',
-    description: 'Whole-slide image analysis for cancer grading, cell segmentation, and Ki-67 proliferation index scoring — automated pathology at scale.',
-    tech: ['ViT-B', 'U-Net', 'Attention MIL', 'Patch CNN'],
-    metrics: [{ label: 'Gleason Acc.', value: '91%' }, { label: 'Cell mAP', value: '0.89' }, { label: 'AUC', value: '0.96' }],
+    description: 'Full-cycle game development across Unreal Engine, Unity, and Godot — from concept and prototyping to launch on PC, console, and mobile.',
+    tech: ['Unreal Engine', 'Unity', 'Godot', 'C++', 'C#'],
+    metrics: [{ label: 'Platforms', value: '5+' }, { label: 'Engines', value: '3' }, { label: 'FPS Target', value: '60+' }],
     details: {
-      overview: 'Whole-slide image (WSI) pipeline using attention-based multiple instance learning (MIL) for cancer subtype classification and tumour grading without needing pixel-level annotations.',
+      overview: 'We build games from the ground up — gameplay systems, level design, multiplayer networking, and polish — tailored to the engine and platform that fit your vision best.',
       capabilities: [
-        'Whole-slide image tiling and preprocessing',
-        'Cancer subtype classification (H&E stained)',
-        'Gleason grading for prostate cancer',
-        'Tumour infiltrating lymphocyte (TIL) mapping',
-        'Ki-67 automated proliferation scoring',
-        'Cell segmentation and counting',
-        'Attention heatmaps for pathologist review',
-        'OpenSlide and QuPath compatible',
+        'Gameplay systems and mechanics design',
+        'Level and environment design',
+        'Multiplayer and netcode implementation',
+        '2D and 3D asset integration',
+        'Performance optimization and profiling',
+        'Console and mobile porting',
+        'Live-ops tooling and analytics',
+        'Store submission (Steam, App Store, Google Play)',
       ],
     }
   },
   {
-    title: 'Dermatology AI',
-    emoji: '🧬',
+    title: 'Game AI & NPC Systems',
+    emoji: '🤖',
     tag: 'Available',
     tagColor: { bg: 'rgba(248,113,113,0.12)', text: '#f87171', border: 'rgba(248,113,113,0.25)' },
     gradient: 'linear-gradient(135deg,#dc2626,#c2410c)',
-    description: 'Skin lesion classification across 7 diagnostic categories — melanoma, basal cell carcinoma, keratosis, and more — with dermoscopy image support.',
-    tech: ['EfficientNet-B4', 'Vision ViT', 'TTA', 'MC Dropout'],
-    metrics: [{ label: 'Melanoma AUC', value: '0.94' }, { label: 'Macro F1', value: '0.87' }, { label: 'Sensitivity', value: '92%' }],
+    description: 'Believable NPC behavior, procedural generation, and adaptive difficulty — powered by behavior trees, reinforcement learning, and generative AI.',
+    tech: ['Behavior Trees', 'Reinforcement Learning', 'Procedural Gen', 'Pathfinding'],
+    metrics: [{ label: 'NPC Types', value: '10+' }, { label: 'Frame Cost', value: '<2ms' }, { label: 'Tuning', value: 'Live' }],
     details: {
-      overview: 'Trained on ISIC 2019/2020 datasets with 25,000+ dermoscopy images. Test-time augmentation (TTA) and Monte Carlo Dropout ensure robust confidence estimates for borderline cases.',
+      overview: 'We build the AI layer that makes games feel alive — from combat and companion NPCs to procedurally generated worlds and dynamically balanced difficulty.',
       capabilities: [
-        '7-class lesion classification (ISIC taxonomy)',
-        'Melanoma vs benign binary screening',
-        'Dermoscopy and clinical image support',
-        'Test-time augmentation for robust predictions',
-        'Saliency maps highlighting diagnostic regions',
-        'Uncertainty-based referral flagging',
-        'Mobile-optimised model for teledermatology',
-        'Integration with EHR photo upload workflows',
+        'Behavior tree and state machine design',
+        'Reinforcement learning for adaptive NPCs',
+        'Procedural level and content generation',
+        'Pathfinding and navigation systems',
+        'Dynamic difficulty adjustment',
+        'Generative AI for dialogue and quests',
+        'Crowd and squad-based AI',
+        'Performance-optimized runtime AI',
       ],
     }
   },
   {
-    title: 'Ophthalmology AI',
-    emoji: '👁️',
+    title: 'Product & SaaS Engineering',
+    emoji: '💻',
     tag: 'Available',
     tagColor: { bg: 'rgba(167,139,250,0.12)', text: '#a78bfa', border: 'rgba(167,139,250,0.25)' },
     gradient: 'linear-gradient(135deg,#7c3aed,#6d28d9)',
-    description: 'Retinal image analysis for diabetic retinopathy grading (0–4 severity), glaucoma risk screening, and age-related macular degeneration detection.',
-    tech: ['InceptionV3', 'ResNet', 'CAM', 'Bootstrap CI'],
-    metrics: [{ label: 'DR Kappa', value: '0.86' }, { label: 'Glaucoma AUC', value: '0.95' }, { label: 'AMD Acc.', value: '93%' }],
+    description: 'Full-stack web and mobile applications with AI features baked in — dashboards, SaaS platforms, and internal tools built to scale.',
+    tech: ['Next.js', 'React Native', 'Node.js', 'PostgreSQL'],
+    metrics: [{ label: 'Time to MVP', value: '6 wks' }, { label: 'Stack', value: 'Full' }, { label: 'Uptime', value: '99.9%' }],
     details: {
-      overview: 'Trained on EyePACS, APTOS, and REFUGE datasets. Our DR grading model achieves diabetologist-level quadratic weighted kappa (0.86) across 5 severity grades.',
+      overview: 'We build the product around your AI, not the other way around — full-stack web and mobile apps with clean UX, solid infrastructure, and AI features integrated natively.',
       capabilities: [
-        'Diabetic retinopathy grading (0–4 severity)',
-        'Referable DR detection for telemedicine',
-        'Glaucoma optic disc analysis',
-        'Age-related macular degeneration (AMD) screening',
-        'Fundus and OCT image support',
-        'Class activation maps per severity grade',
-        'Longitudinal tracking for disease progression',
-        'Bootstrap confidence intervals for clinical reporting',
+        'Web application development (Next.js / React)',
+        'Mobile app development (React Native)',
+        'API design and backend architecture',
+        'Database design and optimization',
+        'AI feature integration into existing products',
+        'Authentication, billing, and admin tooling',
+        'CI/CD and cloud infrastructure setup',
+        'Ongoing maintenance and scaling support',
       ],
     }
   },
   {
-    title: 'Custom CNN Pipeline',
-    emoji: '⚙️',
+    title: 'Custom AI + Game Pipeline',
+    emoji: '🚀',
     tag: 'Bespoke',
     tagColor: { bg: 'rgba(56,189,248,0.12)', text: '#38bdf8', border: 'rgba(56,189,248,0.25)' },
     gradient: 'linear-gradient(135deg,#0ea5e9,#0369a1)',
-    description: 'End-to-end custom model development for any medical imaging modality — from dataset curation and annotation to training, validation, and clinical deployment.',
-    tech: ['Any Architecture', 'Custom Loss', 'Active Learning', 'MLOps'],
-    metrics: [{ label: 'Delivery', value: '8 wks' }, { label: 'Support', value: '12 mo' }, { label: 'FDA', value: 'Pathway' }],
+    description: 'A tailored blend of AI software and game development for projects that don\'t fit a single category — from prototype to launch.',
+    tech: ['Any Stack', 'Custom Architecture', 'Rapid Prototyping', 'MLOps'],
+    metrics: [{ label: 'Delivery', value: '8 wks' }, { label: 'Support', value: '12 mo' }, { label: 'Scope', value: 'Custom' }],
     details: {
-      overview: 'We handle the full AI development lifecycle: dataset curation, clinical annotation workflows, model training with custom loss functions, explainability integration, validation studies, and deployment to your existing infrastructure.',
+      overview: 'We handle the full lifecycle: discovery and design, prototyping, AI model or gameplay development, testing, and deployment to your platform of choice.',
       capabilities: [
-        'Dataset curation and annotation pipeline',
-        'Custom loss function design (AEL-style)',
-        'Architecture selection and hyperparameter tuning',
-        'GradCAM / Grad-CAM++ / SHAP explainability',
-        'Monte Carlo Dropout uncertainty quantification',
-        'Bootstrap confidence interval reporting',
-        'Clinical validation and performance benchmarking',
-        'Docker/ONNX deployment for clinical systems',
+        'Requirements scoping and technical design',
+        'Rapid prototyping and proof-of-concepts',
+        'Custom AI model or gameplay system development',
+        'Cross-engine and cross-platform delivery',
+        'Performance testing and optimization',
+        'Deployment and infrastructure setup',
+        'Post-launch support and iteration',
+        'Flexible engagement — fixed scope or ongoing team',
       ],
     }
   },
@@ -156,17 +156,17 @@ const ServicesSection = () => {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
               </svg>
-              Medical Imaging AI Solutions
+              AI Software & Game Development
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              CNN Models for Every{' '}
+              Built for Every{' '}
               <span style={{ background: 'linear-gradient(90deg,#38bdf8,#34d399)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                Clinical Modality
+                Product & Platform
               </span>
             </h2>
             <p className="text-lg" style={{ color: '#64748b' }}>
-              Lightweight, explainable, and clinically validated deep learning models
-              deployable on standard hospital hardware — no GPU cluster required.
+              From production AI systems to shipped games — we build software
+              that performs, scales, and holds up under real users.
             </p>
           </div>
 
@@ -232,12 +232,12 @@ const ServicesSection = () => {
 
           {/* Bottom CTA */}
           <div className="mt-20 text-center">
-            <p className="mb-6" style={{ color: '#475569' }}>Need a model for a modality not listed? We build custom pipelines for any imaging type.</p>
+            <p className="mb-6" style={{ color: '#475569' }}>Need something that doesn't fit a single category? We build custom pipelines for any AI or game project.</p>
             <a href="#contact" className="inline-flex items-center gap-2 px-8 py-4 text-white font-semibold rounded-xl transition-all" style={{ background: 'linear-gradient(135deg,#0ea5e9,#059669)', boxShadow: '0 8px 25px rgba(14,165,233,0.25)' }}>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
-              Discuss Your Imaging Problem
+              Discuss Your Project
             </a>
           </div>
         </div>

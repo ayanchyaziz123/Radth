@@ -6,7 +6,7 @@ import {
   FaUtensils, 
   FaGavel, 
   FaHome, 
-  FaHeartbeat,
+  FaGamepad,
   FaGraduationCap,
   FaHandsHelping,
   FaBuilding,
@@ -66,10 +66,10 @@ const WordPressServicePage = () => {
       description: 'Dynamic real estate portals with property search and agent management systems.'
     },
     {
-      name: 'Healthcare',
-      icon: <FaHeartbeat className="text-red-500" />,
-      features: ['Patient Portal', 'Appointment Scheduling', 'Medical Forms', 'HIPAA Compliance', 'Doctor Profiles', 'Health Resources'],
-      description: 'HIPAA-compliant medical websites with patient management and appointment systems.'
+      name: 'Gaming & Entertainment',
+      icon: <FaGamepad className="text-red-500" />,
+      features: ['Game Showcase Pages', 'Community Forums', 'Patch Notes & Devlogs', 'Store & Key Sales', 'Leaderboards', 'Press Kit Hosting'],
+      description: 'Game studio and entertainment websites with community features and store integration.'
     },
     {
       name: 'Education',
@@ -507,7 +507,7 @@ const WordPressServicePage = () => {
                     <option value="ecommerce">E-commerce & Retail</option>
                     <option value="legal">Legal Services</option>
                     <option value="realestate">Real Estate</option>
-                    <option value="healthcare">Healthcare</option>
+                    <option value="gaming">Gaming & Entertainment</option>
                     <option value="education">Education</option>
                     <option value="other">Other</option>
                   </select>

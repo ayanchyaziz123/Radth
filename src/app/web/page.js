@@ -134,25 +134,25 @@ const CustomWebDevelopmentPage = () => {
       startingPrice: '$16,000'
     },
     {
-      title: 'Healthcare Applications',
+      title: 'AI-Powered Web Apps',
       icon: <FaShieldAlt size={24} className="text-red-600" />,
-      description: 'HIPAA-compliant healthcare systems with patient management and telemedicine features',
-      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'AWS HIPAA'],
+      description: 'Web applications with AI features built in — recommendation engines, chatbots, and automation baked into the product',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      technologies: ['React', 'Node.js', 'PostgreSQL', 'PyTorch'],
       features: [
-        'Patient portal & records',
-        'Appointment scheduling',
-        'Telemedicine integration',
-        'HIPAA-compliant infrastructure',
-        'Electronic health records',
-        'Prescription management',
-        'Insurance claim processing',
-        'Medical billing integration'
+        'AI chatbot & agent integration',
+        'Recommendation engines',
+        'Predictive analytics dashboards',
+        'Automated workflow tools',
+        'Custom model APIs',
+        'Real-time data processing',
+        'Third-party AI API integration',
+        'MLOps & model monitoring'
       ],
-      benefits: 'Improve patient care and reduce administrative costs by 35% with custom healthcare solutions.',
-      projects: '12+ Healthcare Apps',
-      timeline: '12-20 weeks',
-      startingPrice: '$20,000'
+      benefits: 'Ship AI features that improve user engagement and automate manual work from day one.',
+      projects: '12+ AI-Powered Apps',
+      timeline: '10-18 weeks',
+      startingPrice: '$18,000'
     }
   ];
 
@@ -288,11 +288,11 @@ const CustomWebDevelopmentPage = () => {
       project: 'E-commerce Platform'
     },
     {
-      name: 'Dr. James Wilson',
-      company: 'MedCare Solutions',
-      text: 'The HIPAA-compliant patient management system streamlined our entire practice. Highly professional team.',
+      name: 'James Wilson',
+      company: 'Northline Studios',
+      text: 'The AI features they built into our platform automated half our manual workflow. Highly professional team.',
       rating: 5,
-      project: 'Healthcare Application'
+      project: 'AI-Powered Web App'
     }
   ];
 

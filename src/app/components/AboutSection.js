@@ -14,25 +14,25 @@ const AboutSection = () => {
   }, []);
 
   const stats = [
-    { value: '6+', label: 'Imaging Modalities' },
-    { value: '<8M', label: 'Params Per Model' },
-    { value: '0.98+', label: 'Mean AUC-ROC' },
-    { value: '0', label: 'Missed High-Risk' },
+    { value: '30+', label: 'Projects Delivered' },
+    { value: '3', label: 'Game Engines' },
+    { value: '99.9%', label: 'Uptime SLA' },
+    { value: '24/7', label: 'Support' },
   ];
 
   const pipeline = [
-    { step: '01', title: 'Dataset & Annotation', desc: 'Clinical dataset curation, class mapping to guidelines, and HIPAA-compliant annotation workflows.', color: '#38bdf8' },
-    { step: '02', title: 'Model Architecture', desc: 'CNN + Vision Transformer selection optimised for your modality. Lightweight (<10M params) for clinical deployment.', color: '#34d399' },
-    { step: '03', title: 'Custom Loss + Training', desc: 'Asymmetric loss functions (AEL-style) encode clinical cost asymmetry. Monte Carlo Dropout for uncertainty.', color: '#fbbf24' },
-    { step: '04', title: 'Explainability & Validation', desc: 'GradCAM heatmaps, bootstrap CIs, and clinical validation studies — results your clinicians can trust.', color: '#a78bfa' },
-    { step: '05', title: 'Clinical Deployment', desc: 'Docker/ONNX packaging, DICOM integration, HL7 FHIR support — runs on your existing hospital infrastructure.', color: '#f87171' },
+    { step: '01', title: 'Discovery & Design', desc: 'We scope the product, define game mechanics or ML objectives, and map the technical architecture.', color: '#38bdf8' },
+    { step: '02', title: 'Prototype', desc: 'Rapid playable or working prototypes — game loop, AI model baseline, or automation proof-of-concept.', color: '#34d399' },
+    { step: '03', title: 'Build & Train', desc: 'Full production build: gameplay systems, custom model training, backend integration, and tooling.', color: '#fbbf24' },
+    { step: '04', title: 'Testing & Optimization', desc: 'Performance profiling, playtesting, model evaluation, and iteration until it holds up under real load.', color: '#a78bfa' },
+    { step: '05', title: 'Launch & Support', desc: 'Deployment to your platform of choice, plus ongoing updates, monitoring, and feature support.', color: '#f87171' },
   ];
 
   const differentiators = [
-    { icon: '🧠', title: 'Clinically Aligned Loss', desc: 'We encode clinical risk asymmetry directly into the training objective — not as post-hoc thresholds.' },
-    { icon: '🔍', title: 'GradCAM Explainability', desc: 'Every prediction comes with saliency maps showing exactly what the model attended to.' },
-    { icon: '📊', title: 'Uncertainty Quantification', desc: 'Monte Carlo Dropout flags low-confidence cases for mandatory clinician review — structurally safe.' },
-    { icon: '⚡', title: 'Lightweight by Design', desc: 'All models <10M parameters. Inference on CPU in <200ms. No GPU cluster required for deployment.' },
+    { icon: '🧠', title: 'AI-First Engineering', desc: 'We design software and games around AI from day one — not bolted on as an afterthought.' },
+    { icon: '🎮', title: 'Cross-Engine Expertise', desc: 'Unity, Unreal, and Godot — we pick the right engine for your game, not the one we know best.' },
+    { icon: '⚙️', title: 'Automation Built In', desc: 'Every project ships with tooling to automate the repetitive parts of your workflow.' },
+    { icon: '⚡', title: 'Fast, Lean Delivery', desc: 'Small senior team, tight feedback loops, and no bloated overhead slowing down your release.' },
   ];
 
   return (
@@ -50,13 +50,13 @@ const AboutSection = () => {
             Our Technology
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Research-Grade AI,{' '}
+            AI Software,{' '}
             <span style={{ background: 'linear-gradient(90deg,#38bdf8,#34d399)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-              Clinical-Ready
+              Game-Ready
             </span>
           </h2>
           <p className="text-lg" style={{ color: '#64748b' }}>
-            We translate published deep learning research into production-grade medical imaging software — with the explainability and safety guarantees that clinical deployment demands.
+            We turn ambitious ideas into production-grade AI software and shipped games — with the performance and polish that players and businesses expect.
           </p>
         </div>
 
@@ -77,8 +77,8 @@ const AboutSection = () => {
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
             <h3 className="text-2xl font-bold text-white mb-3">Our Development Pipeline</h3>
             <p className="mb-8 leading-relaxed" style={{ color: '#475569' }}>
-              From raw clinical images to a validated, deployed model — we own the full stack.
-              Every project follows our 5-stage pipeline built around clinical safety requirements.
+              From concept to launch — we own the full stack.
+              Every project follows our 5-stage pipeline built around shipping quality software fast.
             </p>
             <div className="space-y-4">
               {pipeline.map((p, i) => (
@@ -101,15 +101,15 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Architecture visual */}
+          {/* Stack comparison visual */}
           <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
             <div className="rounded-2xl p-6" style={{ background: '#0a1828', border: '1px solid rgba(56,189,248,0.1)' }}>
-              <p className="text-xs font-medium uppercase tracking-wider mb-5" style={{ color: '#334155' }}>Architecture Comparison</p>
+              <p className="text-xs font-medium uppercase tracking-wider mb-5" style={{ color: '#334155' }}>Engine & Stack Comparison</p>
               <div className="space-y-4">
                 {[
-                  { name: 'DenseNet-121', type: 'CNN', params: '7.0M', f1: 0.83, auc: 0.975, color: '#38bdf8' },
-                  { name: 'EfficientNet-B0', type: 'CNN', params: '5.3M', f1: 0.83, auc: 0.973, color: '#34d399' },
-                  { name: 'DeiT-Tiny', type: 'Transformer', params: '5.9M', f1: 0.81, auc: 0.969, color: '#a78bfa' },
+                  { name: 'Unreal Engine 5', type: '3D / AAA', params: 'C++', f1: 0.95, auc: 0.97, color: '#38bdf8' },
+                  { name: 'Unity', type: '2D/3D / Mobile', params: 'C#', f1: 0.92, auc: 0.96, color: '#34d399' },
+                  { name: 'PyTorch AI Core', type: 'ML Backend', params: 'Python', f1: 0.9, auc: 0.98, color: '#a78bfa' },
                 ].map((m, i) => (
                   <div key={i} className="p-4 rounded-xl" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
                     <div className="flex items-center justify-between mb-3">
@@ -117,12 +117,12 @@ const AboutSection = () => {
                         <span className="text-white text-sm font-bold">{m.name}</span>
                         <span className="text-xs ml-2 px-1.5 py-0.5 rounded" style={{ background: 'rgba(255,255,255,0.05)', color: '#475569' }}>{m.type}</span>
                       </div>
-                      <span className="text-xs" style={{ color: '#334155' }}>{m.params} params</span>
+                      <span className="text-xs" style={{ color: '#334155' }}>{m.params}</span>
                     </div>
                     <div className="space-y-2">
                       <div>
                         <div className="flex justify-between text-xs mb-1" style={{ color: '#475569' }}>
-                          <span>Macro F1</span><span style={{ color: m.color }}>{m.f1}</span>
+                          <span>Delivery Score</span><span style={{ color: m.color }}>{m.f1}</span>
                         </div>
                         <div className="h-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.05)' }}>
                           <div className="h-1.5 rounded-full" style={{ width: `${m.f1 * 100}%`, background: m.color }} />
@@ -130,7 +130,7 @@ const AboutSection = () => {
                       </div>
                       <div>
                         <div className="flex justify-between text-xs mb-1" style={{ color: '#475569' }}>
-                          <span>AUC-ROC</span><span style={{ color: m.color }}>{m.auc}</span>
+                          <span>Reliability</span><span style={{ color: m.color }}>{m.auc}</span>
                         </div>
                         <div className="h-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.05)' }}>
                           <div className="h-1.5 rounded-full" style={{ width: `${m.auc * 100}%`, background: m.color }} />
@@ -140,7 +140,7 @@ const AboutSection = () => {
                   </div>
                 ))}
               </div>
-              <p className="text-xs mt-4 text-center" style={{ color: '#1e293b' }}>Results on HyperKvasir GI endoscopy benchmark</p>
+              <p className="text-xs mt-4 text-center" style={{ color: '#1e293b' }}>Chosen per-project based on scope and platform</p>
             </div>
           </div>
         </div>

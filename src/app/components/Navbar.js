@@ -33,7 +33,7 @@ const Navbar = () => {
           </div>
           <div>
             <span className="text-white font-bold text-xl tracking-tight">Radth</span>
-            <span className="text-xs font-medium ml-1.5 px-1.5 py-0.5 rounded" style={{ background: 'rgba(14,165,233,0.15)', color: '#38bdf8' }}>Medical AI</span>
+            <span className="text-xs font-medium ml-1.5 px-1.5 py-0.5 rounded" style={{ background: 'rgba(14,165,233,0.15)', color: '#38bdf8' }}>AI & Game Dev</span>
           </div>
         </a>
 

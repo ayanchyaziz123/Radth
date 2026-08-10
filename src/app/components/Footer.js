@@ -27,7 +27,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-gray-500 mb-6 text-sm leading-relaxed">
-              Radth AI builds intelligent agents that automate restaurant operations, healthcare workflows, retail, and more — 24/7, without limits.
+              Radth AI builds intelligent AI software and games — from automation agents for restaurants and retail to full game development — 24/7, without limits.
             </p>
             <div className="flex space-x-3">
               {[
@@ -73,12 +73,12 @@ const Footer = () => {
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-6">AI Agents</h3>
             <ul className="space-y-3">
               {[
-                'Restaurant AI Agent',
-                'Healthcare AI Agent',
-                'Retail AI Agent',
-                'Real Estate AI Agent',
+                'Custom AI Software',
+                'Game Development',
+                'Game AI & NPC Systems',
+                'Business Automation AI',
+                'Product & SaaS Engineering',
                 'Customer Support AI Agent',
-                'Marketing AI Agent',
               ].map((agent) => (
                 <li key={agent}>
                   <a

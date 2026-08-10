@@ -163,22 +163,22 @@ const ContactSection = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Which AI Agent interests you? *</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">What are you interested in? *</label>
                     <select
                       name="subject" value={formData.subject} onChange={handleChange}
                       className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-violet-500 focus:outline-none transition text-gray-900 bg-white"
                       required
                     >
-                      <option value="">Select an AI Agent...</option>
-                      <option>Restaurant AI Agent</option>
-                      <option>Retail & E-Commerce AI Agent</option>
-                      <option>Healthcare AI Agent</option>
-                      <option>Real Estate AI Agent</option>
+                      <option value="">Select a service...</option>
+                      <option>Custom AI Software</option>
+                      <option>Business Automation AI</option>
+                      <option>Game Development</option>
+                      <option>Game AI & NPC Systems</option>
+                      <option>Product & SaaS Engineering</option>
                       <option>Customer Support AI Agent</option>
                       <option>Business Analytics AI Agent</option>
-                      <option>HR & Recruitment AI Agent</option>
                       <option>Marketing & Content AI Agent</option>
-                      <option>Custom AI Agent Solution</option>
+                      <option>Custom AI + Game Pipeline</option>
                     </select>
                   </div>
 
