@@ -25,12 +25,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <a href="/" className="flex items-center space-x-3">
-          <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #0ea5e9, #059669)' }}>
-            {/* Brain/scan icon */}
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" />
-            </svg>
-          </div>
+          <img src="/radth-icon.svg" alt="Radth Technology" className="w-9 h-9" />
           <div className="leading-tight">
             <div className="flex items-center">
               <span className="font-bold text-xl tracking-tight" style={{ color: '#0f172a' }}>Radth</span>
