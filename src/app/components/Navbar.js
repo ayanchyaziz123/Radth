@@ -31,9 +31,12 @@ const Navbar = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" />
             </svg>
           </div>
-          <div>
-            <span className="text-white font-bold text-xl tracking-tight">Radth</span>
-            <span className="text-xs font-medium ml-1.5 px-1.5 py-0.5 rounded" style={{ background: 'rgba(14,165,233,0.15)', color: '#38bdf8' }}>AI & Game Dev</span>
+          <div className="leading-tight">
+            <div className="flex items-center">
+              <span className="text-white font-bold text-xl tracking-tight">Radth</span>
+              <span className="text-xs font-medium ml-1.5 px-1.5 py-0.5 rounded" style={{ background: 'rgba(14,165,233,0.15)', color: '#38bdf8' }}>AI & Game Dev</span>
+            </div>
+            <span className="text-xs" style={{ color: '#475569' }}>Radth Technology</span>
           </div>
         </a>
 

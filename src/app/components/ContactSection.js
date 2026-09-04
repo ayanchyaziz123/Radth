@@ -69,7 +69,7 @@ const ContactSection = () => {
           {/* Contact info */}
           <div className="lg:col-span-1">
             <div className="bg-[#0A0A1A] rounded-2xl p-8 h-full text-white">
-              <h3 className="text-xl font-bold mb-8">Contact Radth AI</h3>
+              <h3 className="text-xl font-bold mb-8">Contact Radth Technology</h3>
 
               <div className="space-y-6">
                 {[

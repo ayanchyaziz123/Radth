@@ -143,7 +143,7 @@ const WordPressServicePage = () => {
     {
       name: 'Sarah Johnson',
       company: 'Johnson\'s Restaurant',
-      text: 'Radth IT Solutions transformed our restaurant business with an amazing WordPress site. Online orders increased by 300%!',
+      text: 'Radth Technology transformed our restaurant business with an amazing WordPress site. Online orders increased by 300%!',
       rating: 5
     },
     {

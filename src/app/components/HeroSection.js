@@ -49,7 +49,7 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-lg mb-10 max-w-xl leading-relaxed" style={{ color: '#94a3b8' }}>
-              Radth builds intelligent AI software and immersive games — from custom
+              Radth Technology builds intelligent AI software and immersive games — from custom
               machine learning pipelines and automation tools to full game production
               across Unity, Unreal, and Godot. Shipped fast. Built to scale.
             </p>

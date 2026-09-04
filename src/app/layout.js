@@ -4,8 +4,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "RadTH",
-  description: "software company",
+  title: "Radth Technology",
+  description: "AI software solutions & game development company",
 };
 
 export default function RootLayout({ children }) {

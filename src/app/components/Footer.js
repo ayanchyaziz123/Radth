@@ -23,11 +23,11 @@ const Footer = () => {
                 </svg>
               </div>
               <span className="text-white font-bold text-xl tracking-tight">
-                Radth<span className="bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent"> AI</span>
+                Radth<span className="bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent"> Technology</span>
               </span>
             </div>
             <p className="text-gray-500 mb-6 text-sm leading-relaxed">
-              Radth AI builds intelligent AI software and games — from automation agents for restaurants and retail to full game development — 24/7, without limits.
+              Radth Technology builds intelligent AI software and games — from automation agents for restaurants and retail to full game development — 24/7, without limits.
             </p>
             <div className="flex space-x-3">
               {[
@@ -136,7 +136,7 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-gray-600 text-xs">
-          <p>&copy; {currentYear} Radth AI. All rights reserved.</p>
+          <p>&copy; {currentYear} Radth Technology. All rights reserved.</p>
           <div className="mt-4 md:mt-0 flex space-x-6">
             <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</a>
