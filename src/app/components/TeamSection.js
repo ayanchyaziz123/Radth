@@ -3,10 +3,10 @@ import { useState, useEffect } from 'react';
 
 // Placeholder roster — swap in real names, titles, photos, and links.
 const team = [
-  { name: 'Azizur Rahman (Ayan)', role: 'Founder & CEO', initials: 'AR', bio: 'Sets the product vision and leads client strategy across AI and game projects.', gradient: 'linear-gradient(135deg,#0ea5e9,#0284c7)' },
-  { name: 'AI Lead Name', role: 'Lead AI Engineer', initials: 'AL', bio: 'Designs and ships the ML pipelines, from model training to production inference.', gradient: 'linear-gradient(135deg,#059669,#0d9488)' },
-  { name: 'Game Lead Name', role: 'Lead Game Developer', initials: 'GL', bio: 'Owns gameplay systems and engine architecture across Unity, Unreal, and Godot.', gradient: 'linear-gradient(135deg,#d97706,#b45309)' },
-  { name: 'Design Lead Name', role: 'Product & Design Lead', initials: 'DL', bio: 'Shapes UX and visual design for every product and game we ship.', gradient: 'linear-gradient(135deg,#7c3aed,#6d28d9)' },
+  { name: 'Azizur Rahman (Ayan)', role: 'Co-Founder & Lead AI Engineer', initials: 'AR', bio: 'Designs and ships the ML pipelines, from model training to production inference.', gradient: 'linear-gradient(135deg,#0ea5e9,#0284c7)' },
+  { name: 'Co-Founder Name', role: 'Co-Founder & Business Lead', initials: 'CF', bio: 'Leads client strategy and business operations across AI and game projects.', gradient: 'linear-gradient(135deg,#059669,#0d9488)' },
+  { name: 'Co-Founder Name', role: 'Co-Founder & Lead Game Developer', initials: 'CF', bio: 'Owns gameplay systems and engine architecture across Unity, Unreal, and Godot.', gradient: 'linear-gradient(135deg,#d97706,#b45309)' },
+  { name: 'Co-Founder Name', role: 'Co-Founder & Product Design Lead', initials: 'CF', bio: 'Shapes UX and visual design for every product and game we ship.', gradient: 'linear-gradient(135deg,#7c3aed,#6d28d9)' },
 ];
 
 const TeamSection = () => {
