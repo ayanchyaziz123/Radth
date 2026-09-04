@@ -1,10 +1,11 @@
 'use client';
 import { useState } from 'react';
+import { IconChip, IconGear, IconController, IconRobot, IconMonitor, IconRocket } from './icons';
 
 const services = [
   {
     title: 'Custom AI Software',
-    emoji: '🧠',
+    Icon: IconChip,
     tag: 'Flagship',
     tagColor: { bg: 'rgba(14,165,233,0.1)', text: '#0284c7', border: 'rgba(14,165,233,0.3)' },
     gradient: 'linear-gradient(135deg,#0ea5e9,#0284c7)',
@@ -27,7 +28,7 @@ const services = [
   },
   {
     title: 'Business Automation AI',
-    emoji: '⚙️',
+    Icon: IconGear,
     tag: 'Available',
     tagColor: { bg: 'rgba(5,150,105,0.1)', text: '#047857', border: 'rgba(5,150,105,0.3)' },
     gradient: 'linear-gradient(135deg,#059669,#0d9488)',
@@ -50,7 +51,7 @@ const services = [
   },
   {
     title: 'Game Development',
-    emoji: '🎮',
+    Icon: IconController,
     tag: 'Flagship',
     tagColor: { bg: 'rgba(217,119,6,0.1)', text: '#b45309', border: 'rgba(217,119,6,0.3)' },
     gradient: 'linear-gradient(135deg,#d97706,#b45309)',
@@ -73,7 +74,7 @@ const services = [
   },
   {
     title: 'Game AI & NPC Systems',
-    emoji: '🤖',
+    Icon: IconRobot,
     tag: 'Available',
     tagColor: { bg: 'rgba(220,38,38,0.1)', text: '#b91c1c', border: 'rgba(220,38,38,0.3)' },
     gradient: 'linear-gradient(135deg,#dc2626,#c2410c)',
@@ -96,7 +97,7 @@ const services = [
   },
   {
     title: 'Product & SaaS Engineering',
-    emoji: '💻',
+    Icon: IconMonitor,
     tag: 'Available',
     tagColor: { bg: 'rgba(124,58,237,0.1)', text: '#6d28d9', border: 'rgba(124,58,237,0.3)' },
     gradient: 'linear-gradient(135deg,#7c3aed,#6d28d9)',
@@ -119,7 +120,7 @@ const services = [
   },
   {
     title: 'Custom AI + Game Pipeline',
-    emoji: '🚀',
+    Icon: IconRocket,
     tag: 'Bespoke',
     tagColor: { bg: 'rgba(14,165,233,0.1)', text: '#0284c7', border: 'rgba(14,165,233,0.3)' },
     gradient: 'linear-gradient(135deg,#0ea5e9,#0369a1)',
@@ -191,7 +192,9 @@ const ServicesSection = () => {
 
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-4">
-                    <span className="text-3xl">{svc.emoji}</span>
+                    <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: svc.tagColor.bg }}>
+                      <svc.Icon className="w-6 h-6" style={{ color: svc.tagColor.text }} />
+                    </div>
                     <span className="text-xs font-semibold px-2.5 py-1 rounded-full" style={{ background: svc.tagColor.bg, color: svc.tagColor.text, border: `1px solid ${svc.tagColor.border}` }}>
                       {svc.tag}
                     </span>
@@ -255,7 +258,9 @@ const ServicesSection = () => {
                 </svg>
               </button>
               <div className="flex items-center gap-4 mb-3">
-                <span className="text-4xl">{selected.emoji}</span>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.15)' }}>
+                  <selected.Icon className="w-7 h-7 text-white" />
+                </div>
                 <h2 className="text-2xl font-bold text-white">{selected.title}</h2>
               </div>
               <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>{selected.details.overview}</p>

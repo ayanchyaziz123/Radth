@@ -1,15 +1,16 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { IconController, IconGear, IconChip, IconMonitor } from './icons';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeScan, setActiveScan] = useState(0);
 
   const scans = [
-    { label: 'NPC Behavior AI', icon: '🎮', result: 'Trained · Ready to ship', confidence: '96.4%', risk: 'low' },
-    { label: 'Procedural Generation', icon: '🗺️', result: 'Level built · Balanced', confidence: '94.8%', risk: 'low' },
-    { label: 'Business Automation', icon: '⚙️', result: 'Deployed · Live in prod', confidence: '98.1%', risk: 'low' },
-    { label: 'Player Analytics', icon: '📈', result: 'Churn risk · Segment flagged', confidence: '92.7%', risk: 'medium' },
+    { label: 'NPC Behavior AI', Icon: IconController, result: 'Model trained', metric: 'Latency 2ms', status: 'low' },
+    { label: 'Procedural Generation', Icon: IconChip, result: 'Levels generated', metric: '128 variants', status: 'low' },
+    { label: 'Business Automation', Icon: IconGear, result: 'Live in production', metric: '4.2k tasks/day', status: 'low' },
+    { label: 'Player Analytics', Icon: IconMonitor, result: 'Insight ready', metric: '6 segments', status: 'medium' },
   ];
 
   const riskColor = { low: '#059669', medium: '#d97706', high: '#dc2626' };
@@ -49,9 +50,10 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-lg mb-10 max-w-xl leading-relaxed" style={{ color: '#64748b' }}>
-              Radth Technology builds intelligent AI software and immersive games — from custom
-              machine learning pipelines and automation tools to full game production
-              across Unity, Unreal, and Godot. Shipped fast. Built to scale.
+              Radth Technology builds AI-powered software and games — custom machine
+              learning systems, automation tools, and full game production across
+              Unity, Unreal, and Godot. We handle the entire process, from architecture
+              to deployment, so what you get works in production, not just in a demo.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-14">
@@ -109,14 +111,15 @@ const HeroSection = () => {
                       background: activeScan === i ? 'rgba(14,165,233,0.06)' : '#f8fafc',
                       border: activeScan === i ? '1px solid rgba(14,165,233,0.25)' : '1px solid transparent',
                     }}>
-                      <span className="text-xl">{scan.icon}</span>
+                      <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(14,165,233,0.1)' }}>
+                        <scan.Icon className="w-5 h-5" style={{ color: '#0284c7' }} />
+                      </div>
                       <div className="flex-1 min-w-0">
                         <p className="text-sm font-medium" style={{ color: '#0f172a' }}>{scan.label}</p>
-                        <p className="text-xs truncate" style={{ color: riskColor[scan.risk] }}>{scan.result}</p>
+                        <p className="text-xs truncate" style={{ color: riskColor[scan.status] }}>{scan.result}</p>
                       </div>
                       <div className="text-right flex-shrink-0">
-                        <p className="text-xs font-bold" style={{ color: '#334155' }}>{scan.confidence}</p>
-                        <p className="text-xs" style={{ color: '#94a3b8' }}>confidence</p>
+                        <p className="text-xs font-bold" style={{ color: '#334155' }}>{scan.metric}</p>
                       </div>
                     </div>
                   ))}

@@ -51,17 +51,17 @@ const ContactSection = () => {
     <section id="contact" className="py-28 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-50 border border-violet-200 text-violet-700 font-medium text-sm mb-6">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-50 border border-sky-200 text-sky-700 font-medium text-sm mb-6">
             Get In Touch
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Ready to Deploy Your{' '}
-            <span className="bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
-              AI Agent?
+            Let's Build Your{' '}
+            <span className="bg-gradient-to-r from-sky-600 to-emerald-600 bg-clip-text text-transparent">
+              Next Project
             </span>
           </h2>
           <p className="text-lg text-gray-500">
-            Tell us about your business and we'll recommend the right AI agent. Most clients are live within 2 weeks.
+            Tell us what you're building and we'll get back to you with next steps within one business day.
           </p>
         </div>
 
@@ -78,13 +78,13 @@ const ContactSection = () => {
                   { icon: MapPin, label: 'Location', value: 'New York, NY', href: null },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-violet-500/20 border border-violet-500/30 flex items-center justify-center flex-shrink-0">
-                      <item.icon className="text-violet-400" size={18} />
+                    <div className="w-10 h-10 rounded-xl bg-sky-500/20 border border-sky-500/30 flex items-center justify-center flex-shrink-0">
+                      <item.icon className="text-sky-400" size={18} />
                     </div>
                     <div>
                       <p className="text-gray-400 text-xs font-medium mb-1">{item.label}</p>
                       {item.href ? (
-                        <a href={item.href} className="text-white text-sm hover:text-violet-300 transition-colors">
+                        <a href={item.href} className="text-white text-sm hover:text-sky-300 transition-colors">
                           {item.value}
                         </a>
                       ) : (
@@ -109,7 +109,7 @@ const ContactSection = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-white/5 hover:bg-violet-500/20 border border-white/10 hover:border-violet-500/40 rounded-xl flex items-center justify-center text-gray-400 hover:text-violet-300 transition-all"
+                      className="w-10 h-10 bg-white/5 hover:bg-sky-500/20 border border-white/10 hover:border-sky-500/40 rounded-xl flex items-center justify-center text-gray-400 hover:text-sky-300 transition-all"
                     >
                       <social.icon size={18} />
                     </a>
@@ -118,10 +118,10 @@ const ContactSection = () => {
               </div>
 
               {/* Quick response badge */}
-              <div className="mt-8 p-4 bg-violet-500/10 border border-violet-500/20 rounded-xl">
+              <div className="mt-8 p-4 bg-sky-500/10 border border-sky-500/20 rounded-xl">
                 <div className="flex items-center gap-2 mb-1">
                   <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                  <p className="text-white text-xs font-semibold">Typically replies within 2 hours</p>
+                  <p className="text-white text-xs font-semibold">Typically replies within 1 business day</p>
                 </div>
                 <p className="text-gray-500 text-xs">Mon–Fri, 9am–6pm EST</p>
               </div>
@@ -138,7 +138,7 @@ const ContactSection = () => {
                   <CheckCircle className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold mb-1">Message received!</h4>
-                    <p className="text-sm">We'll get back to you within 2 hours.</p>
+                    <p className="text-sm">We'll get back to you within one business day.</p>
                   </div>
                 </div>
               ) : (
@@ -148,7 +148,7 @@ const ContactSection = () => {
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Your Name *</label>
                       <input
                         type="text" name="name" value={formData.name} onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-violet-500 focus:outline-none transition text-gray-900"
+                        className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-sky-500 focus:outline-none transition text-gray-900"
                         placeholder="John Doe" required
                       />
                     </div>
@@ -156,7 +156,7 @@ const ContactSection = () => {
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Your Email *</label>
                       <input
                         type="email" name="email" value={formData.email} onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-violet-500 focus:outline-none transition text-gray-900"
+                        className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-sky-500 focus:outline-none transition text-gray-900"
                         placeholder="john@example.com" required
                       />
                     </div>
@@ -166,7 +166,7 @@ const ContactSection = () => {
                     <label className="block text-sm font-semibold text-gray-700 mb-2">What are you interested in? *</label>
                     <select
                       name="subject" value={formData.subject} onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-violet-500 focus:outline-none transition text-gray-900 bg-white"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-sky-500 focus:outline-none transition text-gray-900 bg-white"
                       required
                     >
                       <option value="">Select a service...</option>
@@ -175,19 +175,17 @@ const ContactSection = () => {
                       <option>Game Development</option>
                       <option>Game AI & NPC Systems</option>
                       <option>Product & SaaS Engineering</option>
-                      <option>Customer Support AI Agent</option>
-                      <option>Business Analytics AI Agent</option>
-                      <option>Marketing & Content AI Agent</option>
                       <option>Custom AI + Game Pipeline</option>
+                      <option>Other</option>
                     </select>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Tell us about your business *</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Tell us about your project *</label>
                     <textarea
                       name="message" rows={5} value={formData.message} onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-violet-500 focus:outline-none transition text-gray-900 resize-none"
-                      placeholder="What does your business do? What problems are you trying to solve with AI?"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-sky-500 focus:outline-none transition text-gray-900 resize-none"
+                      placeholder="What are you building, and what problem are you trying to solve?"
                       required
                     />
                   </div>
@@ -195,7 +193,7 @@ const ContactSection = () => {
                   <button
                     onClick={handleSubmit}
                     disabled={isSubmitting}
-                    className={`w-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold py-4 px-6 rounded-xl hover:from-violet-500 hover:to-indigo-500 transition-all flex items-center justify-center shadow-xl shadow-violet-500/25 ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
+                    className={`w-full bg-gradient-to-r from-sky-600 to-emerald-600 text-white font-semibold py-4 px-6 rounded-xl hover:from-sky-500 hover:to-emerald-500 transition-all flex items-center justify-center shadow-xl shadow-sky-500/25 ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
                   >
                     {isSubmitting ? (
                       <>

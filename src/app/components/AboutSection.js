@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { IconChip, IconController, IconGear, IconBolt } from './icons';
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,10 +30,10 @@ const AboutSection = () => {
   ];
 
   const differentiators = [
-    { icon: '🧠', title: 'AI-First Engineering', desc: 'We design software and games around AI from day one — not bolted on as an afterthought.' },
-    { icon: '🎮', title: 'Cross-Engine Expertise', desc: 'Unity, Unreal, and Godot — we pick the right engine for your game, not the one we know best.' },
-    { icon: '⚙️', title: 'Automation Built In', desc: 'Every project ships with tooling to automate the repetitive parts of your workflow.' },
-    { icon: '⚡', title: 'Fast, Lean Delivery', desc: 'Small senior team, tight feedback loops, and no bloated overhead slowing down your release.' },
+    { Icon: IconChip, title: 'AI-First Engineering', desc: 'We design software and games around AI from day one — not bolted on as an afterthought.' },
+    { Icon: IconController, title: 'Cross-Engine Expertise', desc: 'Unity, Unreal, and Godot — we pick the right engine for your game, not the one we know best.' },
+    { Icon: IconGear, title: 'Automation Built In', desc: 'Every project ships with tooling to automate the repetitive parts of your workflow.' },
+    { Icon: IconBolt, title: 'Fast, Lean Delivery', desc: 'A small senior team and tight feedback loops mean nothing slows down your release.' },
   ];
 
   return (
@@ -65,7 +66,9 @@ const AboutSection = () => {
           {differentiators.map((d, i) => (
             <div key={i} className={`p-6 rounded-2xl transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ background: '#ffffff', border: '1px solid rgba(15,23,42,0.06)', boxShadow: '0 1px 3px rgba(15,23,42,0.04)', transitionDelay: `${i * 80}ms` }}>
-              <span className="text-3xl mb-4 block">{d.icon}</span>
+              <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ background: 'rgba(14,165,233,0.1)' }}>
+                <d.Icon className="w-6 h-6" style={{ color: '#0284c7' }} />
+              </div>
               <h3 className="font-bold mb-2" style={{ color: '#0f172a' }}>{d.title}</h3>
               <p className="text-sm leading-relaxed" style={{ color: '#64748b' }}>{d.desc}</p>
             </div>
@@ -107,36 +110,19 @@ const AboutSection = () => {
               <p className="text-xs font-medium uppercase tracking-wider mb-5" style={{ color: '#94a3b8' }}>Engine & Stack Comparison</p>
               <div className="space-y-4">
                 {[
-                  { name: 'Unreal Engine 5', type: '3D / AAA', params: 'C++', f1: 0.95, auc: 0.97, color: '#0284c7' },
-                  { name: 'Unity', type: '2D/3D / Mobile', params: 'C#', f1: 0.92, auc: 0.96, color: '#059669' },
-                  { name: 'PyTorch AI Core', type: 'ML Backend', params: 'Python', f1: 0.9, auc: 0.98, color: '#6d28d9' },
+                  { name: 'Unreal Engine 5', type: '3D / AAA', language: 'C++', bestFor: 'High-fidelity 3D, console and PC titles', color: '#0284c7' },
+                  { name: 'Unity', type: '2D & 3D / Mobile', language: 'C#', bestFor: 'Cross-platform and mobile-first games', color: '#059669' },
+                  { name: 'PyTorch', type: 'ML Backend', language: 'Python', bestFor: 'Model training and production inference', color: '#6d28d9' },
                 ].map((m, i) => (
                   <div key={i} className="p-4 rounded-xl" style={{ background: '#f8fafc', border: '1px solid rgba(15,23,42,0.05)' }}>
-                    <div className="flex items-center justify-between mb-3">
-                      <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: m.color }} />
                         <span className="text-sm font-bold" style={{ color: '#0f172a' }}>{m.name}</span>
-                        <span className="text-xs ml-2 px-1.5 py-0.5 rounded" style={{ background: '#eef2f7', color: '#64748b' }}>{m.type}</span>
                       </div>
-                      <span className="text-xs" style={{ color: '#94a3b8' }}>{m.params}</span>
+                      <span className="text-xs px-1.5 py-0.5 rounded" style={{ background: '#eef2f7', color: '#64748b' }}>{m.type}</span>
                     </div>
-                    <div className="space-y-2">
-                      <div>
-                        <div className="flex justify-between text-xs mb-1" style={{ color: '#64748b' }}>
-                          <span>Delivery Score</span><span style={{ color: m.color }}>{m.f1}</span>
-                        </div>
-                        <div className="h-1.5 rounded-full" style={{ background: '#e2e8f0' }}>
-                          <div className="h-1.5 rounded-full" style={{ width: `${m.f1 * 100}%`, background: m.color }} />
-                        </div>
-                      </div>
-                      <div>
-                        <div className="flex justify-between text-xs mb-1" style={{ color: '#64748b' }}>
-                          <span>Reliability</span><span style={{ color: m.color }}>{m.auc}</span>
-                        </div>
-                        <div className="h-1.5 rounded-full" style={{ background: '#e2e8f0' }}>
-                          <div className="h-1.5 rounded-full" style={{ width: `${m.auc * 100}%`, background: m.color }} />
-                        </div>
-                      </div>
-                    </div>
+                    <p className="text-xs leading-relaxed pl-4" style={{ color: '#64748b' }}>{m.bestFor} · <span style={{ color: '#94a3b8' }}>{m.language}</span></p>
                   </div>
                 ))}
               </div>
