@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 // Placeholder roster — swap in real names, titles, photos, and links.
 const team = [
-  { name: 'Azizur Rahman (Ayan)', role: 'Co-Founder & Head of Product & Engineering', initials: 'AR', photo: '/images/cover6.jpeg', bio: 'Leads mobile, web, and ML product development from idea to design to production.', gradient: 'linear-gradient(135deg,#0ea5e9,#0284c7)' },
+  { name: 'Azizur Rahman (Ayan)', role: 'Co-Founder & Head of Software Product & Engineering', initials: 'AR', photo: '/images/cover6.jpeg', bio: 'Leads mobile, web, and ML product development from idea to design to production.', gradient: 'linear-gradient(135deg,#0ea5e9,#0284c7)' },
   { name: 'Co-Founder Name', role: 'Co-Founder & Business Lead', initials: 'CF', bio: 'Leads client strategy and business operations across AI and game projects.', gradient: 'linear-gradient(135deg,#059669,#0d9488)' },
   { name: 'Co-Founder Name', role: 'Co-Founder & Lead Game Developer', initials: 'CF', bio: 'Owns gameplay systems and engine architecture across Unity, Unreal, and Godot.', gradient: 'linear-gradient(135deg,#d97706,#b45309)' },
   { name: 'Co-Founder Name', role: 'Co-Founder & Product Design Lead', initials: 'CF', bio: 'Shapes UX and visual design for every product and game we ship.', gradient: 'linear-gradient(135deg,#7c3aed,#6d28d9)' },
